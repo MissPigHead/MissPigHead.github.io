@@ -1,12 +1,79 @@
-/* .banner-image {
-  background-image: url(../image/per-1.jpg);
+#home section{
+
+}
+
+.home-l{
+  height: 100vh;
+  width: 30vw;
+  background: rgba(255,240,240,0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-r{
+  font-family: 'Yesteryear', cursive;
+  color: #eee;
+  height: 100vh;
+  width: 70vw;
+  background: rgba(5,5,5,0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 999;
+}
+
+.home-box{
+  padding: 0 20%;
+}
+
+a.topic{
+  font-family: 'Bebas Neue', cursive;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(50,3,3,0.9);
+  font-size: 3.5rem;
+  margin: 0.5rem;
+}
+a.topic:hover{
+  text-decoration:none;
+  transform: scale(1.3);
+}
+
+/* 
+
+.deco-thin{
+  height: 0.5vh;
+  margin: 0.5vh 0;
+  background-color: mediumvioletred;
+}
+
+.deco-thick{
+  height: 2vh;
+  margin: 0.5vh 0;
+  background-color: firebrick;
+}
+
+font-family: 'Courgette', cursive;
+font-family: 'Seaweed Script', cursive;
+font-family: 'Yesteryear', cursive;
+
+font-family: 'Bebas Neue', cursive;
+font-family: 'Staatliches', cursive;
+font-family: 'Lalezar', cursive;
+font-family: 'Kavoon', cursive;
+
+
+
+
+ */
+
+.banner-image{
+  display: flex;
+  height: 100vh;
+  background-image: url('./../image/banner-2.jpg');
+  background-position: center top;
+  background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
-  background-position: center center;
-} */
-
-.left-b-box{
-  height: 100vh;
-  background-color: azure;
 }
