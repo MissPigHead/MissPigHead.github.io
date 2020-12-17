@@ -8,43 +8,163 @@
   <link rel="stylesheet" href="./css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/custom.css">
   <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap&family=Staatliches&display=swap&family=Bebas+Neue&display=swap&family=Courgette&display=swap&family=Kavoon&display=swap&family=Seaweed+Script&display=swap&family=Yesteryear&display=swap" rel="stylesheet">
+  <script src="./js/jquery-3.5.1.min.js"></script>
+  <script src="./js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-<section id="home">
-  <div class="banner-image">
-    <div class="home-l">
+<!-- navbar 手機版-->
+  <nav class="navbar navbar-dark bg-dark d-sm-none fixed-top">
+    <!-- 橫列的左上品牌 -->
+    <a class="navbar-brand" href="#">Navbar</a>
+    <!-- 橫列的右上圖示 -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- 實際導覽目錄內容 -->
+    <div class="navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown link
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<!-- banner 主視覺 -->
+  <div class="banner-image position-absolute"></div>
+
+<!-- 主內容 -->
+<div class="container position-absolute container-center">
+  <div class="row justify-content-end">
+    <!-- main intro -->
+    <div class="col-12 col-sm-8 mt-sm-5 pt-sm-5 vh-100 d-flex flex-column justify-content-center">
+      <div class="h1 font-yest text-white mx-2 mx-sm-4 mt-sm-5 pt-5 align-self-start">Hi! I am Lingling</div>
+      <div class="h1 font-yest text-white mx-2 mx-sm-4 my-2 align-self-end">— Web Developer</div>
+      <div class="h3 font-yest text-white text-justify mx-4 my-2 align-self-center d-none d-sm-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt quia ad iste velit suscipit molestiae qui dolorem. Explicabo, nemo perspiciatis rem harum sint fugiat nostrum excepturi iure, delectus maiores saepe!</div>
+    </div>
+
+    <!-- portfolio -->
+    <div class="col-12 col-sm-8">
+      <div class="row card-columns">
+        <div class="card col-6 col-md-4" data-toggle="modal" data-target="#exampleModal">
+          <img src="./image/po-ps-cal2021.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">2021 Card </h5>
+          </div>
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">2021 Calendar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <img src="./image/po-ps-cal2021.jpg" class="pf-image-b" alt="">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+  
+        <div class="card p-3  col-6 col-md-4">
+          <blockquote class="blockquote mb-0 card-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+            <footer class="blockquote-footer">
+              <small class="text-muted">
+                Someone famous in <cite title="Source Title">Source Title</cite>
+              </small>
+            </footer>
+          </blockquote>
+        </div>
+        <div class="card   col-6 col-md-4">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+        <div class="card bg-primary text-white text-center p-3  col-6 col-md-3">
+          <blockquote class="blockquote mb-0">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+            <footer class="blockquote-footer text-white">
+              <small>
+                Someone famous in <cite title="Source Title">Source Title</cite>
+              </small>
+            </footer>
+          </blockquote>
+        </div>
+        <div class="card text-center col-6 col-md-4">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This card has a regular title and short paragraphy of text below it.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+        <div class="card col-6 col-md-4">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is another card with title and supporting text below. This card has some additional content to make it slightly taller overall.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-8">
+    </div>
+
+    <div class="col-12 col-sm-8">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- nav sm以上 #nav-->
+  <div class="container position-absolute d-none d-sm-flex">
+    <div class="row" id="nav">
+      <div class="col-sm-4 vh-100 home-l font-bebas">
         <a class="topic">HOME</a>
         <a class="topic">INTRO</a>
         <a class="topic">SKILL</a>
         <a class="topic">EXPERIENCE</a>
         <a class="topic">PORTFOLIO</a>
         <a class="topic">CONTACT</a>
-    </div>
-    <div class="home-r">
-      <div class="h1 home-box" style="padding-top:30%;">lorem</div>
-      <div class="h2 home-box">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi quibusdam vitae ex suscipit tempora, quis deleniti iusto iure exercitationem, iste esse. Quisquam natus corporis ut doloribus nemo earum rem quo!</div>
-    </div>
-
-  </div>
-</section>
-
-
-
-  <!-- <section id="home" class="container col-12 p-0"> -->
-
-  <!-- <div class="row">
-    <div class="col-4 col-md-3 p-0 home-l text-center">HOME<br><br><br><br>TEST
-    </div>
-    <div class="col-8 col-md-9 p-0 home-r text-center">
-      <div class="banner-image">
-        <div class="deco-thin"></div>
-        <div class="deco-thick"></div>
-        <!-- <img src="image/banner-1.jpg" class="banner-image"> -->
-        <div class="deco-thick"></div>
-        <div class="deco-thin"></div>
       </div>
     </div>
-  </div> -->
-</section>
+  </div>
+    
+
+<!-- contact -->
 </body>
 </html>

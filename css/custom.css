@@ -1,79 +1,135 @@
-#home section{
-
-}
-
-.home-l{
-  height: 100vh;
-  width: 30vw;
-  background: rgba(255,240,240,0.8);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.home-r{
-  font-family: 'Yesteryear', cursive;
-  color: #eee;
-  height: 100vh;
-  width: 70vw;
-  background: rgba(5,5,5,0.4);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  z-index: 999;
-}
-
-.home-box{
-  padding: 0 20%;
-}
-
-a.topic{
-  font-family: 'Bebas Neue', cursive;
-  color: #fff;
-  text-shadow: 0 0 5px rgba(50,3,3,0.9);
-  font-size: 3.5rem;
-  margin: 0.5rem;
-}
-a.topic:hover{
-  text-decoration:none;
-  transform: scale(1.3);
-}
-
-/* 
-
-.deco-thin{
-  height: 0.5vh;
-  margin: 0.5vh 0;
-  background-color: mediumvioletred;
-}
-
-.deco-thick{
-  height: 2vh;
-  margin: 0.5vh 0;
-  background-color: firebrick;
-}
-
-font-family: 'Courgette', cursive;
+/* font-family: 'Courgette', cursive;
 font-family: 'Seaweed Script', cursive;
 font-family: 'Yesteryear', cursive;
 
 font-family: 'Bebas Neue', cursive;
 font-family: 'Staatliches', cursive;
 font-family: 'Lalezar', cursive;
-font-family: 'Kavoon', cursive;
+font-family: 'Kavoon', cursive; */
+.font-yest{  font-family: 'Yesteryear', cursive;}
+.font-bebas{  font-family: 'Bebas Neue', cursive;}
+.font-kavoon{  font-family: 'Kavoon', cursive;}
+
+html,body{
+  width: 100%;
+}
+.main{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+}
+
+/* nav */
+
+  #nav section{
+    position: absolute;
+    z-index:999;
+  }
+
+  #nav a.topic{
+    font-family: 'Bebas Neue', cursive;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(50,3,3,0.9);
+    font-size: 2.6rem; 
+    margin: 0.2rem;
+  }
+  
+  #nav a.topic:hover{
+    text-decoration:none;
+    transform: scale(1.3);
+  }
+  
+.home-l{
+  height: 100vh;
+  width: 30%;
+  background: rgba(255, 238, 242,0.8);
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 
-
-
- */
+/* banner */
+#banner section{
+  z-index: 1;
+}
 
 .banner-image{
-  display: flex;
   height: 100vh;
-  background-image: url('./../image/banner-2.jpg');
-  background-position: center top;
+  width: 100%;
+  background-image: url('./../image/banner-1.jpg');
+  background-position: 70% top;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  z-index: -100;
+}
+
+.main-r{
+  position: absolute;
+}
+
+.home-box{
+  padding: 0 10%;
+}
+
+
+/* .mask-bk{
+  height: 100vh;
+  background: rgba(5,5,5,0.1);
+} */
+
+.pf-box{
+  width: 25%;
+  margin: 6%;
+  border-radius: 5px;
+  background: rgba(255, 238, 242,0.8);
+}
+
+.pf-image-s{
+  width: 90%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.pf-image-b{
+  width: 466px;
+  height: auto;
+}
+
+.container.container-center {
+  margin: 0 auto;
+  left:50%;
+  transform: translateX(-50%);
+}
+
+@media(min-width:576px){
+  .banner-image{
+    background-position: center top;}
+  .home-box{
+    padding: 0 20%;}
+  .main-r{
+    right: 6vw;}
+    
+}
+
+@media (min-width: 768px) {
+  #nav a.topic{
+    font-size: 3.2rem;
+  }
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 1400px) {
+
 }
