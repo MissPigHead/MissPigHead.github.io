@@ -30,6 +30,10 @@ html,body{
     z-index:999;
   }
 
+  #nav div.topic{
+    width: 100%;
+  }
+
   #nav a.topic{
     font-family: 'Bebas Neue', cursive;
     color: #fff;
