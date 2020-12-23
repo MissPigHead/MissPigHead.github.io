@@ -21,7 +21,7 @@ html,body{
     z-index:999;
   }
 
-  #nav a.topic{
+  #nav div.topic{
     font-family: 'Bebas Neue', cursive;
     color: #fff;
     text-shadow: 0 0 5px rgba(50,3,3,0.9);
@@ -29,9 +29,11 @@ html,body{
     padding: 0.2rem;
   }
   
-  #nav a.topic:hover{
-    text-decoration:none;
-    transform: scale(1.3);
+  #nav div.topic:hover{
+    transform: scale(1.2);
+  }
+  #nav a:hover{
+    text-decoration: none;
   }
 
 .nav-cus{
@@ -44,7 +46,7 @@ html,body{
 }
 
 /* banner */
-/* #banner section{
+/* #banner sect2.8{
   z-index: 1;
 } */
 
@@ -57,17 +59,29 @@ html,body{
   z-index: -100;
 }
 
+#intro{
+  font-size: 2rem;
+  color: ghostwhite;
+
+}
+
+
 .main-block-pt{
   padding-top: 20rem;
 }
 
 /* 每個sec主標 */
-.sec-topic-bg{
+/* .sec-topic-bg{
   background-color: rgba(0, 0, 0, 0.2);
-}
+} */
+
 .sec-topic{
+  color: darkred;
   font-size: 3.6rem;
   font-family: 'Lalezar', cursive;
+  text-decoration-style: solid;
+  text-decoration-line: underline;
+  text-decoration-color: rgba(150, 10, 30,1)
 }
 
 .portfolio-image{
@@ -80,6 +94,14 @@ html,body{
 .card-columns { 
   column-count: 2;
 }
+
+.card{
+  box-shadow: 0 0 5px rgba(40,0,0,0.5);
+}
+.card:hover{
+  transform: scale(1.05);
+}
+
 
 @media(min-width:576px){
   .banner-image{
@@ -96,8 +118,8 @@ html,body{
 }
 
 @media (min-width: 768px) {
-  #nav a.topic{
-    font-size: 3rem;
+  #nav div.topic{
+    font-size: 2.6rem;
   }
   .card-columns {  
     column-count: 3;
@@ -110,8 +132,8 @@ html,body{
 }
 
 @media (min-width: 992px) {
-  #nav a.topic{
-    font-size: 3.2rem;
+  #nav div.topic{
+    font-size: 2.8rem;
   }
   .nav-cus{
     width: 21%;
@@ -132,3 +154,14 @@ html,body{
   } */
 
 }
+
+
+
+/*-------------------- for Typed.js --------------------*/
+/* Cursor */
+/* .typed-cursor {
+}
+
+/* If fade out option is set */
+/* .typed-fade-out {
+} */ 
