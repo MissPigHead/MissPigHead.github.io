@@ -6,6 +6,26 @@ font-family: 'Bebas Neue', cursive;
 font-family: 'Staatliches', cursive;
 font-family: 'Lalezar', cursive;
 font-family: 'Kavoon', cursive; */
+
+
+:root {
+  --pink01:#fadde1;
+  --pink02:#ffc4d6;
+  --pink03:#ffa6c1;
+  --pink04:#ff87ab;
+  --pink05:#ff5d8f;
+  --pink06:#e05780;
+  --pink07:#b9375e;
+  --pink08:#8a2846;
+  --pink09:#602437;
+  --pink10:#522e38;
+  --grey01:#6b717e;
+  --green01:#d4dccd;
+  --green02:#d8e2dc;
+}
+
+
+
 .font-yest{  font-family: 'Yesteryear', cursive;}
 .font-bebas{  font-family: 'Bebas Neue', cursive;}
 .font-kavoon{  font-family: 'Kavoon', cursive;}
@@ -14,7 +34,163 @@ html,body{
   width: 100%;
 }
 
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  position: fixed;
+  top: 0;
+  left: -300;
+  bottom: 0;
+  width: 300px;
+  transition: all ease-in-out 0.5s;
+  z-index: 9997;
+  transition: all 0.5s;
+  padding: 0 15px;
+  background: var(--pink04);
+  overflow-y: auto;
+}
+
+#header .profile img {
+  margin: 15px auto;
+  display: block;
+  width: 120px;
+  border: 8px solid var(--pink08);
+}
+
+#header .profile h1 {
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  -moz-text-align-last: center;
+  text-align-last: center;
+  font-family: "Poppins", sans-serif;
+}
+
+#header .profile a h1, #header .profile a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+#header .profile .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: #212431;
+  color: #fff;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+#header .profile .social-links a:hover {
+  background: #149ddd;
+  color: #fff;
+  text-decoration: none;
+}
+
+#main {
+  margin-left: 300px;
+}
+
+@media (max-width: 991px) {
+  #header {
+    left: -300px;
+  }
+  #main {
+    margin-left: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Desktop Navigation */
+.nav-menu {
+  padding-top: 30px;
+}
+
+.nav-menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-menu > ul > li {
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav-menu a {
+  display: flex;
+  align-items: center;
+  color: #a8a9b4;
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  transition: 0.3s;
+  font-size: 15px;
+}
+
+.nav-menu a i {
+  font-size: 24px;
+  padding-right: 8px;
+  color: #6f7180;
+}
+
+.nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-menu a:hover i, .nav-menu .active > a i, .nav-menu li:hover > a i {
+  color: #149ddd;
+}
+
+/* Mobile Navigation */
+.mobile-nav-toggle {
+  position: fixed;
+  right: 15px;
+  top: 15px;
+  z-index: 9998;
+  border: 0;
+  background: none;
+  font-size: 24px;
+  transition: all 0.4s;
+  outline: none !important;
+  line-height: 1;
+  cursor: pointer;
+  text-align: right;
+}
+
+.mobile-nav-toggle i {
+  color: #149ddd;
+}
+
+.mobile-nav-active {
+  overflow: hidden;
+}
+
+.mobile-nav-active #header {
+  left: 0;
+}
+
+.mobile-nav-active .mobile-nav-toggle i {
+  color: #fff;
+}
+
+
+
+
 /* nav */
+.profile{
+  width: 50%;
+}
 
   #nav section{
     position: absolute;
@@ -36,13 +212,12 @@ html,body{
     text-decoration: none;
   }
 
-.nav-cus{
-  width: 27%;
+
+.nav-w-cus{
+  width: 300px;
   height: 100vh;
   margin-left: 6%;
-  background: rgba(255, 133, 186,0.8);
-  position: fixed;
-  z-index: 999;
+  background: rgba(248, 192, 216, 0.8);
 }
 
 /* banner */

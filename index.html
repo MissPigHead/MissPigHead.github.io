@@ -12,59 +12,53 @@
   <script src="./js/jquery-3.5.1.min.js"></script>
   <script src="./js/bootstrap.bundle.min.js"></script>
   <script src="./js/typed.js"></script>
+  <script src="./js/jquery.easing.min.js"></script>
 </head>
-<body>
-<!-- nav 導覽-->
-<section id="nav">
-  <!-- nav 手機 -->
-  <nav class="navbar navbar-dark bg-dark d-sm-none fixed-top">
-    <!-- 橫列的左上品牌 -->
-    <a class="navbar-brand" href="#">Navbar</a>
-    <!-- 橫列的右上圖示 -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <!-- 實際導覽目錄內容 -->
-    <div class="navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#banner">Home</a>
-        </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" href="#">Intro</a>
-        </li> -->
-        <li class="nav-item">
-          <a class="nav-link" href="#experience">Experience</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#portfolio">Portfolio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
-        </li>
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown link
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li> -->
-      </ul>
+<body class="">
+<!-- ======= Mobile nav toggle button ======= -->
+<button type="button" class="mobile-nav-toggle d-lg-none"><i class="fas fa-bars"></i></button>
+
+<!-- ======= Header ======= -->
+  <section id="header">
+    <div class="d-flex flex-column justify-content-center align-items-center">
+      <div class="profile d-none d-md-block">
+        <a href="#banner">
+          <img src="./image/per-2.jpg" alt="" class="img-fluid rounded-circle">
+          <h1 class="text-light">Lingling</h1>
+        </a>
+      </div>
+      <nav class="nav-menu">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#banner"><i class="fas fa-home"></i>Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="far fa-user-circle"></i>Intro</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#experience"><i class="far fa-list-alt"></i>Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio"><i class="far fa-file-alt"></i>Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <!-- <i class="fas fa-layer-group"></i>
+              <i class="fas fa-server"></i>
+              <i class="far fa-address-card"></i>
+              <i class="fas fa-envelope"></i>
+              <i class="fas fa-phone-alt"></i>
+              <i class="fas fa-mobile-alt"></i>
+              <i class="fas fa-map-marker-alt"></i> -->
+              <a class="nav-link" href="#contact"><i class="far fa-envelope"></i>Contact</a>
+            </li>
+          </ul>
+      </nav><!-- .nav-menu -->
+      <button type="button" class="mobile-nav-toggle d-lg-none"><i class="fas fa-bars"></i></button>
+
     </div>
-  </nav>
-<!-- nav 一般  和Modal相衝突  確認position的問題  container滿版問題-->
-  <div class="nav-cus d-flex flex-column justify-content-center align-items-center nav-bg font-bebas">
-    <a href="#banner"><div class="topic text-center">HOME</div></a>
-    <!-- <a href=""><div class="topic text-center">INTRO</div></a>
-    <a href=""><div class="topic text-center">SKILL</div></a> -->
-    <a href="#xperience"><div class="topic text-center">EXPERIENCE</div></a>
-    <a href="#portfolio"><div class="topic text-center">PORTFOLIO</div></a>
-    <a href="#contact"><div class="topic text-center">CONTACT</div></a>
-  </div>
-</section>
+  </section><!-- End Header -->
+
+<main id="main">
 
 <!-- banner 主視覺 -->
 <section id="banner" class="banner-image">
@@ -92,82 +86,29 @@
   </div>
 </section>
 
-<!-- portfolio -->
-<section id="portfolio" class="portfolio-image w-100">
-  <div class="container-fluid">
-    <div class="row justify-content-start">
-      <div class="col-sm-4 col-lg-3"></div>      
-      <div class="col-12 col-sm-8 col-lg-9 pt-sm-5 flex-column main-block-pr sec-topic text-center" id="portfolioTitle">PORTFOLIO</div>
-    </div>  
-    <div class="row justify-content-start">
-      <div class="col-sm-4 col-lg-3"></div>      
-        <div class="col-12 col-sm-8 col-lg-9 card-columns main-block-pr">
-<!-- 2021Calendar -- Button trigger modal -->
-        <div type="button" class="card" data-toggle="modal" data-target="#calander">
-          <img class="card-img" src="./image/po-ps-cal2021.jpg" alt="Card image">
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="calander" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header text-center">
-                <h5 class="modal-title" id="exampleModalLongTitle">2021 Calendar</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img class="card-img" src="./image/po-ps-cal2021.jpg">
-              </div>
-              <!-- <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div> -->
-            </div>
-          </div>
-        </div>
-
-<!-- 9sticker -- Button trigger modal -->
-        <div type="button" class="card" data-toggle="modal" data-target="#sticker">
-          <img class="card-img" src="./image/po-ai-sticker.jpg" alt="Card image">
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="sticker" tabindex="-1" role="dialog" aria-labelledby="stickerTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header text-center">
-                <h5 class="modal-title" id="stickerTitle">9 Logo/Sticker</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img class="card-img" src="./image/po-ai-sticker.jpg">
-              </div>
-              <!-- <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div> -->
-            </div>
-          </div>
-        </div>
-
-<!-- ThaiDM -- Button trigger modal -->
-          <div type="button" class="card" data-toggle="modal" data-target="#ThaiDM">
-            <img class="card-img" src="./image/po-ps-eDM.jpg" alt="Card image">
+<!-------------------- portfolio -------------------->
+  <section id="portfolio" class="portfolio-image w-100">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="sec-topic">PORTFOLIO</div>
+      </div>  
+      <div class="card-columns">
+  <!-- 2021Calendar -- Button trigger modal -->
+          <div type="button" class="card" data-toggle="modal" data-target="#calander">
+            <img class="card-img" src="./image/po-ps-cal2021.jpg" alt="Card image">
           </div>
           <!-- Modal -->
-          <div class="modal fade" id="ThaiDM" tabindex="-1" role="dialog" aria-labelledby="ThaiDMTitle" aria-hidden="true">
+          <div class="modal fade" id="calander" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header text-center">
-                  <h5 class="modal-title" id="ThaiDMTitle">Bangkok Travel eDM</h5>
+                  <h5 class="modal-title" id="exampleModalLongTitle">2021 Calendar</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                  <img class="card-img" src="./image/po-ps-eDM.jpg">
+                  <img class="card-img" src="./image/po-ps-cal2021.jpg">
                 </div>
                 <!-- <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -177,143 +118,207 @@
             </div>
           </div>
 
-
-<!-- eAD -- Button trigger modal -->
-<div type="button" class="card" data-toggle="modal" data-target="#eAD">
-  <img class="card-img" src="./image/po-DG-eAD.gif" alt="Card image">
-</div>
-<!-- Modal -->
-<div class="modal fade" id="eAD" tabindex="-1" role="dialog" aria-labelledby="eADTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h5 class="modal-title" id="eADTitle">ERV System eAD</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <img class="card-img" src="./image/po-DG-eAD.gif">
-      </div>
-      <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div> -->
-    </div>
-  </div>
-</div>
-
-<!-- BioAuarium -- Button trigger modal -->
-<div type="button" class="card" data-toggle="modal" data-target="#BioAuarium">
-  <img class="card-img" src="./image/po-HW-BioAqua.jpg" alt="Card image">
-</div>
-<!-- Modal -->
-<div class="modal fade" id="BioAuarium" tabindex="-1" role="dialog" aria-labelledby="BioAuariumTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h5 class="modal-title" id="BioAuariumTitle">ERV System eAD</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body embed-responsive embed-responsive-16by9">
-        <iframe src="https://www.youtube.com/embed/4bm6mNN4-bg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div> -->
-    </div>
-  </div>
-</div>
-
-          <div class="card bg-primary text-white text-center p-3">
-            <blockquote class="blockquote mb-0">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-              <footer class="blockquote-footer">
-                <small>
-                  Someone famous in <cite title="Source Title">Source Title</cite>
-                </small>
-              </footer>
-            </blockquote>
+  <!-- 9sticker -- Button trigger modal -->
+          <div type="button" class="card" data-toggle="modal" data-target="#sticker">
+            <img class="card-img" src="./image/po-ai-sticker.jpg" alt="Card image">
           </div>
-
-          <div class="card text-center">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <!-- Modal -->
+          <div class="modal fade" id="sticker" tabindex="-1" role="dialog" aria-labelledby="stickerTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header text-center">
+                  <h5 class="modal-title" id="stickerTitle">9 Logo/Sticker</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <img class="card-img" src="./image/po-ai-sticker.jpg">
+                </div>
+                <!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+              </div>
             </div>
           </div>
 
-          
-
-
-<!-- AniElephant -- Button trigger modal -->
-<div type="button" class="card" data-toggle="modal" data-target="#AniElephant">
-  <img class="card-img" src="https://fakeimg.pl/200x200/#f00" alt="Card image">
-</div>
-<!-- Modal -->
-<div class="modal fade" id="AniElephant" tabindex="-1" role="dialog" aria-labelledby="AniElephantTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h5 class="modal-title" id="AniElephantTitle">Elephant Animation</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      </div>
-      <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div> -->
-    </div>
-  </div>
-</div>
-
-          
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>          
+  <!-- ThaiDM -- Button trigger modal -->
+            <div type="button" class="card" data-toggle="modal" data-target="#ThaiDM">
+              <img class="card-img" src="./image/po-ps-eDM.jpg" alt="Card image">
+            </div>
+    <!-- Modal -->
+            <div class="modal fade" id="ThaiDM" tabindex="-1" role="dialog" aria-labelledby="ThaiDMTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header text-center">
+                    <h5 class="modal-title" id="ThaiDMTitle">Bangkok Travel eDM</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <img class="card-img" src="./image/po-ps-eDM.jpg">
+                  </div>
+                  <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+  <!-- eAD -- Button trigger modal -->
+            <div type="button" class="card" data-toggle="modal" data-target="#eAD">
+              <img class="card-img" src="./image/po-DG-eAD.gif" alt="Card image">
+            </div>
+    <!-- Modal -->
+            <div class="modal fade" id="eAD" tabindex="-1" role="dialog" aria-labelledby="eADTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header text-center">
+                    <h5 class="modal-title" id="eADTitle">ERV System eAD</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <img class="card-img" src="./image/po-DG-eAD.gif">
+                  </div>
+                  <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+  <!-- BioAuarium -- Button trigger modal -->
+            <div type="button" class="card" data-toggle="modal" data-target="#BioAuarium">
+              <img class="card-img" src="./image/po-HW-BioAqua.jpg" alt="Card image">
+            </div>
+    <!-- Modal -->
+            <div class="modal fade" id="BioAuarium" tabindex="-1" role="dialog" aria-labelledby="BioAuariumTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header text-center">
+                    <h5 class="modal-title" id="BioAuariumTitle">ERV System eAD</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body embed-responsive embed-responsive-16by9">
+                    <iframe src="https://www.youtube.com/embed/4bm6mNN4-bg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                  <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+            <div class="card bg-primary text-white text-center p-3">
+              <blockquote class="blockquote mb-0">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+                <footer class="blockquote-footer">
+                  <small>
+                    Someone famous in <cite title="Source Title">Source Title</cite>
+                  </small>
+                </footer>
+              </blockquote>
+            </div>
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+  <!-- AniElephant -- Button trigger modal -->
+            <div type="button" class="card" data-toggle="modal" data-target="#AniElephant">
+              <img class="card-img" src="https://fakeimg.pl/200x200/#f00" alt="Card image">
+            </div>
+    <!-- Modal -->
+            <div class="modal fade" id="AniElephant" tabindex="-1" role="dialog" aria-labelledby="AniElephantTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header text-center">
+                    <h5 class="modal-title" id="AniElephantTitle">Elephant Animation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                  </div>
+                  <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>          
+            </div>
+            <div class="card p-3">
+              <blockquote class="blockquote mb-0 card-body">
+                <p>Lorem ipsum dolor sit amet. Integer posuere erat a ante.</p>
+                <footer class="blockquote-footer">
+                  <small class="text-muted">
+                    Someone famous in <cite title="Source Title">Source Title</cite>
+                  </small>
+                </footer>
+              </blockquote>
+            </div>
           </div>
-          <div class="card p-3">
-            <blockquote class="blockquote mb-0 card-body">
-              <p>Lorem ipsum dolor sit amet. Integer posuere erat a ante.</p>
-              <footer class="blockquote-footer">
-                <small class="text-muted">
-                  Someone famous in <cite title="Source Title">Source Title</cite>
-                </small>
-              </footer>
-            </blockquote>
-          </div>
-        </div>
-      </div>
+
     </div>  
-</section>
+  </section>
 
-<!-- contact -->
-
-<section id="contact" class="bg-light w-100">
-  <div class="container-fluid">
-    <div class="row justify-content-start">
-      <div class="col-sm-4 col-lg-3"></div>      
-      <div class="col-12 col-sm-8 col-lg-9 pt-sm-5 flex-column main-block-pr sec-topic text-center">CONTACT</div>
-      <div class="col-sm-4 col-lg-3"></div>      
-      <div class="col-12 col-sm-8 main-block-pr d-flex flex-column justify-content-center align-items-center">
-        <form action="">
-          
+<!-------------------- contact -------------------->
+  <section id="contact" class="bg-light w-100 my-5">
+    <div class="container">
+      <div class="sec-topic text-center">CONTACT</div>
+      <div class="row">
+        <div class="col-md-4 my-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora aliquid, cupiditate quidem provident, minima obcaecati consequuntur architecto labore esse porro alias eos totam quis earum delectus sint excepturi quo repellendus?</div>
+        <form action="" method=""  class="col-md-8">
+          <div class="form-group row justify-content-center">
+            <label class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" placeholder="Let me know who you are">
+            </div>
+          </div>          
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" placeholder="Please leave your email">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Telephone</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" placeholder="Please leave your phone number">
+            </div>
+          </div>          
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Subject</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control">
+            </div>
+          </div>          
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Message</label>
+            <div class="col-sm-10">
+              <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+            </div>
+          </div>          
         </form>
       </div>
-    </div>  
-  </div>  
-</section>
-
+    </div>
+  </section>
+</main>
 
 
 <!-------------------- script -------------------->
@@ -331,8 +336,86 @@
 </script> -->
 
 <script>
-  // document.getElementById('portfolioTitle').style.textDecoration()
-  $('#portfolioTitle').css()
+  // Smooth scroll for the navigation menu and links with .scrollto classes
+  $(document).on('click', '.nav-menu a, .scrollto', function(e) {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      e.preventDefault();
+      var target = $(this.hash);
+      if (target.length) {
+
+        var scrollto = target.offset().top;
+
+        $('html, body').animate({
+          scrollTop: scrollto
+        }, 1500, 'easeInOutExpo');
+
+        if ($(this).parents('.nav-menu, .mobile-nav').length) {
+          $('.nav-menu .active, .mobile-nav .active').removeClass('active');
+          $(this).closest('li').addClass('active');
+        }
+
+        if ($('body').hasClass('mobile-nav-active')) {
+          $('body').removeClass('mobile-nav-active');
+          $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu far fa-times-circle');
+        }
+        return false;
+      }
+    }
+  });
+
+
+
+  // Activate smooth scroll on page load with hash links in the url
+  $(document).ready(function() {
+    if (window.location.hash) {
+      var initial_nav = window.location.hash;
+      if ($(initial_nav).length) {
+        var scrollto = $(initial_nav).offset().top;
+        $('html, body').animate({
+          scrollTop: scrollto
+        }, 1500, 'easeInOutExpo');
+      }
+    }
+  });
+
+  $(document).on('click', '.mobile-nav-toggle', function(e) {
+    $('body').toggleClass('mobile-nav-active');
+    $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu far fa-times-circle');
+  });
+
+  $(document).click(function(e) {
+    var container = $(".mobile-nav-toggle");
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+      if ($('body').hasClass('mobile-nav-active')) {
+        $('body').removeClass('mobile-nav-active');
+        $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu far fa-times-circle');
+      }
+    }
+  });
+
+  // Navigation active state on scroll
+  var nav_sections = $('section');
+  var main_nav = $('.nav-menu, .mobile-nav');
+
+  $(window).on('scroll', function() {
+    var cur_pos = $(this).scrollTop() + 200;
+
+    nav_sections.each(function() {
+      var top = $(this).offset().top,
+        bottom = top + $(this).outerHeight();
+
+      if (cur_pos >= top && cur_pos <= bottom) {
+        if (cur_pos <= bottom) {
+          main_nav.find('li').removeClass('active');
+        }
+        main_nav.find('a[href="#' + $(this).attr('id') + '"]').parent('li').addClass('active');
+      }
+      if (cur_pos < 300) {
+        $(".nav-menu ul:first li:first").addClass('active');
+      }
+    });
+  });
+
 
 </script>
 </body>
