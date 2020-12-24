@@ -56,7 +56,7 @@ html,body{
   margin: 15px auto;
   display: block;
   width: 120px;
-  border: 8px solid var(--pink08);
+  border: 8px solid var(--pink0);
 }
 
 #header .profile h1 {
@@ -74,28 +74,7 @@ html,body{
   text-decoration: none;
 }
 
-#header .profile .social-links a {
-  font-size: 18px;
-  display: inline-block;
-  background: #212431;
-  color: #fff;
-  line-height: 1;
-  padding: 8px 0;
-  margin-right: 4px;
-  border-radius: 50%;
-  text-align: center;
-  width: 36px;
-  height: 36px;
-  transition: 0.3s;
-}
-
-#header .profile .social-links a:hover {
-  background: #149ddd;
-  color: #fff;
-  text-decoration: none;
-}
-
-#main {
+main {
   margin-left: 300px;
 }
 
@@ -103,7 +82,7 @@ html,body{
   #header {
     left: -300px;
   }
-  #main {
+  main {
     margin-left: 0;
   }
 }
@@ -130,26 +109,27 @@ html,body{
 .nav-menu a {
   display: flex;
   align-items: center;
-  color: #a8a9b4;
+  color:#fbf9fa;
   padding: 12px 15px;
   margin-bottom: 8px;
   transition: 0.3s;
-  font-size: 15px;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .nav-menu a i {
   font-size: 24px;
   padding-right: 8px;
-  color: #6f7180;
+  color:#fbf9fa;
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
   text-decoration: none;
-  color: #fff;
+  color: #C5075D;
 }
 
 .nav-menu a:hover i, .nav-menu .active > a i, .nav-menu li:hover > a i {
-  color: #149ddd;
+  color:#f72585;
 }
 
 /* Mobile Navigation */
@@ -189,7 +169,7 @@ html,body{
 
 /* nav */
 .profile{
-  width: 50%;
+ margin: 50px 0 30px 0;
 }
 
   #nav section{
@@ -234,10 +214,24 @@ html,body{
   z-index: -100;
 }
 
-#intro{
-  font-size: 2rem;
+#banner .intro-1{
+  font-size: 3rem;
+  font-weight: 400;
   color: ghostwhite;
+  font-family:'Yesteryear', cursive; 
+}
 
+#banner .intro-2{
+  font-size: 2rem;
+  font-weight: 500;
+  color: ghostwhite;
+  font-family:'Yesteryear', cursive; 
+}
+
+#banner .intro-3{
+  font-size: 1rem;
+  color: ghostwhite;
+  font-family:'Courgette', cursive; 
 }
 
 

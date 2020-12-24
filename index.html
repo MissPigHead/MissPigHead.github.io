@@ -14,7 +14,7 @@
   <script src="./js/typed.js"></script>
   <script src="./js/jquery.easing.min.js"></script>
 </head>
-<body class="">
+<body>
 <!-- ======= Mobile nav toggle button ======= -->
 <button type="button" class="mobile-nav-toggle d-lg-none"><i class="fas fa-bars"></i></button>
 
@@ -24,7 +24,7 @@
       <div class="profile d-none d-md-block">
         <a href="#banner">
           <img src="./image/per-2.jpg" alt="" class="img-fluid rounded-circle">
-          <h1 class="text-light">Lingling</h1>
+          <h1 class="text-light">Lingling Chang</h1>
         </a>
       </div>
       <nav class="nav-menu">
@@ -58,30 +58,21 @@
     </div>
   </section><!-- End Header -->
 
-<main id="main">
+<main>
 
 <!-- banner 主視覺 -->
 <section id="banner" class="banner-image">
-  <div class="container-fluid">
-    <div class="row justify-content-start">
+  <div class="container">
+    <div class="row justify-content-center">
       <!-- main intro -->
-      <div class="col-sm-4"></div>      
-      <div class="col-12 col-sm-8 col-lg-7 vh-100 d-flex flex-column justify-content-center px-4 main-block-pr main-block-pt" id="typed-strings">
-
-        <!-- <div id="introTx">
-          <span class="introTx ">Hi!^800 I am^100 <strong>Chang, Lingling^1000</strong></span>
-          <p>Project Manager^500 <em>expertise in^500 Schdule^500, Quality^500, Buget^500 management and control^1000</em></p>
-          <p>Web Designer^500 <em>as a full stack engineer</em></p>
-          <p>Sheltered Workshop Instructor^500 <em> guide the people with disabilities</em></p>
-          <p>Welcome to contact me!</p>
-        </div>
-        <span id="intro" style="white-space:pre;"></span> -->
-  
-        <div class="h1 font-yest text-white align-self-start">Hi! I am Lingling</div>
+      <div class="col-sm-8 col-lg-6 vh-100 d-flex flex-column justify-content-center">
+          <p class="intro-1">Hi! I'm Lingling Chang</p>
+          <p class="intro-2">Professional <span class="typed1" data-typed-items="Web Developer, Project Manager, "></span></p>
+          <p class="intro-3"><span class="typed2" data-typed-items="HTML, CSS, PHP, MySQL, JavaScript...; Expertise in BUDGET, QUALITY, SCHEDULE control and managerment"></span></p>
+        </div> 
+        <!-- <div class="h1 font-yest text-white align-self-start">Hi! I am Lingling</div>
           <div class="h1 font-yest text-white align-self-end">— Web Developer</div>
-          <div class="h3 font-yest text-white align-self-center d-none d-sm-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt quia ad iste velit suscipit molestiae qui dolorem. Explicabo, nemo perspiciatis rem harum sint fugiat nostrum excepturi iure, delectus maiores saepe!</div>
-      </div>
-      <span id="typed"></span>
+          <div class="h3 font-yest text-white align-self-center d-none d-sm-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt quia ad iste velit suscipit molestiae qui dolorem. Explicabo, nemo perspiciatis rem harum sint fugiat nostrum excepturi iure, delectus maiores saepe!</div> -->
     </div>
   </div>
 </section>
@@ -323,19 +314,35 @@
 
 <!-------------------- script -------------------->
 <!-- 打字效果 https://github.com/mattboldt/typed.js/ -->
-<!-- <script>  introTx 那段文字的效果，使用typed.js
-  var typed = new Typed("#intro", {
-      stringsElement: '#introTx',
-      typeSpeed: 60,
-      backSpeed: 10,
-      backDelay: 1500,
-      startDelay: 1000,
-      loop: true,
-    });
-
-</script> -->
+<script>  
+</script>
 
 <script>
+
+
+  let typed1_strings = $(".typed1").data('typed-items');
+  typed1_strings = typed1_strings.split(',')
+  new Typed('.typed1', {
+    strings: typed1_strings,
+    loop: false,
+    typeSpeed: 100,
+    backSpeed: 50,
+    backDelay: 3000
+  });
+
+
+  let typed2_strings = $(".typed2").data('typed-items');
+  typed2_strings = typed2_strings.split(';')
+  new Typed('.typed2', {
+    strings: typed2_strings,
+    startDelay:3000,
+    loop: false,
+    typeSpeed: 50,
+    backSpeed: 0,
+    backDelay: 2000,
+    showCursor: false
+  });
+
   // Smooth scroll for the navigation menu and links with .scrollto classes
   $(document).on('click', '.nav-menu a, .scrollto', function(e) {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
