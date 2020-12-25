@@ -1,3 +1,4 @@
+
 var typed = new Typed('.element', {
   /**
    * @property {array} strings strings to be typed

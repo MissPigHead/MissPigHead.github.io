@@ -65,14 +65,11 @@
   <div class="container">
     <div class="row justify-content-center">
       <!-- main intro -->
-      <div class="col-sm-8 col-lg-6 vh-100 d-flex flex-column justify-content-center">
-          <p class="intro-1">Hi! I'm Lingling Chang</p>
-          <p class="intro-2">Professional <span class="typed1" data-typed-items="Web Developer, Project Manager, "></span></p>
-          <p class="intro-3"><span class="typed2" data-typed-items="HTML, CSS, PHP, MySQL, JavaScript...; Expertise in BUDGET, QUALITY, SCHEDULE control and managerment"></span></p>
-        </div> 
-        <!-- <div class="h1 font-yest text-white align-self-start">Hi! I am Lingling</div>
-          <div class="h1 font-yest text-white align-self-end">— Web Developer</div>
-          <div class="h3 font-yest text-white align-self-center d-none d-sm-block">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt quia ad iste velit suscipit molestiae qui dolorem. Explicabo, nemo perspiciatis rem harum sint fugiat nostrum excepturi iure, delectus maiores saepe!</div> -->
+      <div class="col-sm-8 col-lg-6 vh-100 d-flex flex-column pt-50vh">
+        <p class="intro-2">Hi! I'm Lingling Chang</p>
+        <p class="intro-2"><span class="typed1" data-typed-items="Web Developer^4300, Project Manager^5000"></span></p>
+        <p class="intro-3"><span class="typed2" data-typed-items="^2000 HTML, CSS, PHP, MySQL, JavaScript...^3360; ^2240 Expertise in BUDGET, QUALITY, SCHEDULE control and managerment^3750"></span></p>
+      </div> 
     </div>
   </div>
 </section>
@@ -269,7 +266,7 @@
   </section>
 
 <!-------------------- contact -------------------->
-  <section id="contact" class="bg-light w-100 my-5">
+  <section id="contact" class="bg-light py-3 py-md-5">
     <div class="container">
       <div class="sec-topic text-center">CONTACT</div>
       <div class="row">
@@ -304,46 +301,58 @@
             <div class="col-sm-10">
               <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
             </div>
-          </div>          
+          </div>
+          <div class="form-group row justify-content-center">
+            <button class="col-6 col-sm-4">Send Message</button>
+          </div>
         </form>
       </div>
     </div>
   </section>
 </main>
 
-
+<footer class="footer">
+  &copy; 2020 <strong>Lingling Chang</strong>. All rights reserved.
+</footer>
 <!-------------------- script -------------------->
 <!-- 打字效果 https://github.com/mattboldt/typed.js/ -->
-<script>  
-</script>
 
 <script>
-
-
-  let typed1_strings = $(".typed1").data('typed-items');
-  typed1_strings = typed1_strings.split(',')
+  
+  let typed1_str = $(".typed1").data('typed-items');
+  typed1_str = typed1_str.split(',')
   new Typed('.typed1', {
-    strings: typed1_strings,
-    loop: false,
+    strings: typed1_str,
+    loop: true,
     typeSpeed: 100,
-    backSpeed: 50,
-    backDelay: 3000
-  });
-
-
-  let typed2_strings = $(".typed2").data('typed-items');
-  typed2_strings = typed2_strings.split(';')
-  new Typed('.typed2', {
-    strings: typed2_strings,
-    startDelay:3000,
-    loop: false,
-    typeSpeed: 50,
     backSpeed: 0,
-    backDelay: 2000,
-    showCursor: false
+    backDelay: 0,
+    fadeOut: true,
+    fadeOutClass: 'typed-fade-out',
+    fadeOutDelay: 1000,
   });
 
-  // Smooth scroll for the navigation menu and links with .scrollto classes
+
+  let typed2_str = $(".typed2").data('typed-items');
+  typed2_str = typed2_str.split(';')
+  new Typed('.typed2', {
+    strings: typed2_str,
+    // startDelay:3000,
+    loop: true,
+    startDelay:0,
+    typeSpeed: 10,
+    backSpeed: 0,
+    backDelay: 0,
+    showCursor: false,
+    fadeOut: true,
+    fadeOutClass: 'typed-fade-out',
+    fadeOutDelay: 1000,
+
+  });
+
+
+
+// Smooth scroll for the navigation menu and links with .scrollto classes
   $(document).on('click', '.nav-menu a, .scrollto', function(e) {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       e.preventDefault();

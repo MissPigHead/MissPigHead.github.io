@@ -219,6 +219,7 @@ main {
   font-weight: 400;
   color: ghostwhite;
   font-family:'Yesteryear', cursive; 
+  padding-top: 50vh;
 }
 
 #banner .intro-2{
@@ -271,6 +272,14 @@ main {
   transform: scale(1.05);
 }
 
+.footer{
+  background: var(--green02);
+  padding: 1rem 0;
+}
+
+.pt-50vh{
+  padding-top: 50vh;
+}
 
 @media(min-width:576px){
   .banner-image{
