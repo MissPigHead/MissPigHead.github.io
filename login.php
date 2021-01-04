@@ -32,7 +32,7 @@ include "base.php";
 <body>
     <div class="container py-5">
         <div class="row justify-content-center">
-            <?php if (isset($_SESSION['admin'])) { ?>
+            <?php if(isset($_SESSION['admin'])){ ?>
                 <div class="col-sm-8 col-lg-5 row my-3 justify-content-center h2">
                     Administration
                 </div>
@@ -50,7 +50,7 @@ include "base.php";
                     <input class="col-4 m-1" type="submit" value="Submit">
                     <input class="col-4 m-1" type="reset" value="Reset">
                 </div>
-            <?php } else { ?>
+            <?php }else{ ?>
                 <div class="col-md-10">
                     <ul class="nav nav-tabs">
                         <li class="nav-item dropdown">
@@ -83,7 +83,7 @@ include "base.php";
                 </div>
                 <div class="col-md-10">
                     <?php
-                    if (!empty($_GET['do'])) {
+                    if(!empty($_GET['do'])){
                         include "{$_GET['do']}.php";
                     }
                     ?>
