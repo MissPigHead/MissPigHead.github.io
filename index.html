@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="./favicon.ico" type="image/vnd.microsoft.icon">
+  <link rel="shortcut icon" href="image/ico.png" type="image/vnd.microsoft.icon">
   <title>Lingling's Page</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap&family=Staatliches&display=swap&family=Bebas+Neue&display=swap&family=Courgette&display=swap&family=Kavoon&display=swap&family=Seaweed+Script&display=swap&family=Yesteryear&display=swap" rel="stylesheet">
@@ -60,25 +60,89 @@
 
 <main>
 
-<!-- banner 主視覺 -->
-<section id="banner" class="banner-image">
+<!-------------------- banner -------------------->
+<section id="banner" class="banner-image" style="box-shadow: 0 5px 5px 0 #333;">
   <div class="container">
     <div class="row justify-content-center">
       <!-- main intro -->
       <div class="col-sm-8 col-lg-6 vh-100 d-flex flex-column pt-50vh">
-        <p class="intro-2">Hi! I'm Lingling Chang</p>
+        <p class="intro-1">Hi! I'm Lingling Chang</p>
         <p class="intro-2"><span class="typed1" data-typed-items="Web Developer^4300, Project Manager^5000"></span></p>
-        <p class="intro-3"><span class="typed2" data-typed-items="^2000 HTML, CSS, PHP, MySQL, JavaScript...^3360; ^2240 Expertise in BUDGET, QUALITY, SCHEDULE control and managerment^3750"></span></p>
+        <p class="intro-3"><span class="typed2" data-typed-items="^2000 HTML, CSS, PHP, MySQL, JavaScript...^3352; ^2248 Expertise in BUDGET, QUALITY, SCHEDULE control and managerment^3750"></span></p>
       </div> 
     </div>
   </div>
 </section>
 
+
+<!-------------------- experience -------------------->
+<section id="experience" class="bg-light py-2 py-md-3">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center sec-topic py-2 py-md-4">EXPERIENCE</div>
+      <div class="col-8 row justify-content-center">
+        <div class="col-9">
+          <h4 class="py-2 font-Hammer font-weight-bold">2018 Dimension Data</h4>
+          <h5 class="font-Hammer">Project Coordinator</h5>
+          <p><i class="fas fa-dot-circle small pr-2"></i>FET Cisco router switch and related devices, over 300 sites and 3000 devices</p>
+        </div>
+        <div class="col-1">
+          <img src="image/milestone-c.png" height="150px">
+        </div>
+      </div>
+      <div class="collapse col-8 py-3" id="exDD">
+        <div class="p-2 card card-body">
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+        </div>
+      </div>
+
+
+      <div class="col-8 row justify-content-center" data-toggle="collapse" href="#exACTS">
+        <div class="col-9">
+          <h4 class="py-2 font-Hammer font-weight-bold">2014-2017 ACTS Corp.</h4>
+          <h5 class="font-Hammer">Project Manager</h5>
+          <p><i class="fas fa-dot-circle small pr-2"></i>Main customer: FET, TWM, Ericsson, Nokia...</p>
+        </div>
+        <div class="col-1">
+          <img src="image/milestone-c.png" height="150px">
+        </div>
+      </div>
+      <div class="collapse col-8 py-3" id="exACTS">
+        <div class="p-2 card card-body">
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+        </div>
+      </div>
+
+
+
+      <div class="col-8 row justify-content-center" data-toggle="collapse" href="#exQblinks">
+        <div class="col-9">
+          <h4 class="py-2 font-Hammer font-weight-bold">2013-2014 Qblinks Inc.</h4>
+          <h5 class="font-Hammer">Co-founder, Project Manager</h5>
+          <p><i class="fas fa-dot-circle small pr-2"></i>Introduce Oracle ERP System</p>
+        </div>
+        <div class="col-1">
+          <img src="image/milestone-c.png" height="150px">
+        </div>    
+      </div>
+      <div class="collapse col-8 py-3" id="exQblinks">
+        <div class="p-2 card card-body">
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</section>
+
+
 <!-------------------- portfolio -------------------->
-  <section id="portfolio" class="portfolio-image w-100">
+  <section id="portfolio" class="portfolio-image w-100 py-2 py-md-3">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="sec-topic">PORTFOLIO</div>
+        <div class="sec-topic py-2 py-md-4">PORTFOLIO</div>
       </div>  
       <div class="card-columns">
   <!-- 2021Calendar -- Button trigger modal -->
@@ -203,16 +267,6 @@
                 </div>
               </div>
             </div>
-            <div class="card bg-primary text-white text-center p-3">
-              <blockquote class="blockquote mb-0">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
-                <footer class="blockquote-footer">
-                  <small>
-                    Someone famous in <cite title="Source Title">Source Title</cite>
-                  </small>
-                </footer>
-              </blockquote>
-            </div>
             <div class="card text-center">
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
@@ -250,27 +304,16 @@
                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
               </div>          
             </div>
-            <div class="card p-3">
-              <blockquote class="blockquote mb-0 card-body">
-                <p>Lorem ipsum dolor sit amet. Integer posuere erat a ante.</p>
-                <footer class="blockquote-footer">
-                  <small class="text-muted">
-                    Someone famous in <cite title="Source Title">Source Title</cite>
-                  </small>
-                </footer>
-              </blockquote>
-            </div>
           </div>
-
     </div>  
   </section>
 
 <!-------------------- contact -------------------->
-  <section id="contact" class="bg-light py-3 py-md-5">
+  <section id="contact" class="bg-light py-2 py-md-3">
     <div class="container">
-      <div class="sec-topic text-center">CONTACT</div>
+      <div class="sec-topic text-center py-2 py-md-4">CONTACT</div>
       <div class="row">
-        <div class="col-md-4 my-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora aliquid, cupiditate quidem provident, minima obcaecati consequuntur architecto labore esse porro alias eos totam quis earum delectus sint excepturi quo repellendus?</div>
+        <div class="col-md-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora aliquid, cupiditate quidem provident, minima obcaecati consequuntur architecto labore esse porro alias eos totam quis earum delectus sint excepturi quo repellendus?</div>
         <form action="" method=""  class="col-md-8">
           <div class="form-group row justify-content-center">
             <label class="col-sm-2 col-form-label">Name</label>
@@ -312,7 +355,7 @@
 </main>
 
 <footer class="footer">
-  &copy; 2020 <strong>Lingling Chang</strong>. All rights reserved.
+  &copy; 2020 &nbsp;<strong>Lingling Chang</strong>. All rights reserved.
 </footer>
 <!-------------------- script -------------------->
 <!-- 打字效果 https://github.com/mattboldt/typed.js/ -->

@@ -6,8 +6,7 @@ font-family: 'Bebas Neue', cursive;
 font-family: 'Staatliches', cursive;
 font-family: 'Lalezar', cursive;
 font-family: 'Kavoon', cursive; */
-
-
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Heebo:wght@700&family=Kaushan+Script&family=Marck+Script&family=Rubik&display=swap');
 :root {
   --pink01:#fadde1;
   --pink02:#ffc4d6;
@@ -25,7 +24,7 @@ font-family: 'Kavoon', cursive; */
 }
 
 
-
+.font-Hammer{font-family: 'Hammersmith One', sans-serif;}
 .font-yest{  font-family: 'Yesteryear', cursive;}
 .font-bebas{  font-family: 'Bebas Neue', cursive;}
 .font-kavoon{  font-family: 'Kavoon', cursive;}
@@ -74,7 +73,7 @@ html,body{
   text-decoration: none;
 }
 
-main {
+main, footer {
   margin-left: 300px;
 }
 
@@ -82,7 +81,7 @@ main {
   #header {
     left: -300px;
   }
-  main {
+  main, footer {
     margin-left: 0;
   }
 }
@@ -149,7 +148,7 @@ main {
 }
 
 .mobile-nav-toggle i {
-  color: #149ddd;
+  color: #fbf9fa;
 }
 
 .mobile-nav-active {
@@ -215,39 +214,29 @@ main {
 }
 
 #banner .intro-1{
-  font-size: 3rem;
-  font-weight: 400;
+  font-size: 2rem;
   color: ghostwhite;
-  font-family:'Yesteryear', cursive; 
-  padding-top: 50vh;
+  font-family: 'Rubik', sans-serif;
+  /* padding-top: 50vh; */
 }
 
 #banner .intro-2{
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 500;
   color: ghostwhite;
-  font-family:'Yesteryear', cursive; 
+  font-family: 'Heebo', sans-serif;
 }
 
 #banner .intro-3{
   font-size: 1rem;
   color: ghostwhite;
-  font-family:'Courgette', cursive; 
+  font-family: 'Rubik', sans-serif;
 }
 
-
-.main-block-pt{
-  padding-top: 20rem;
-}
-
-/* 每個sec主標 */
-/* .sec-topic-bg{
-  background-color: rgba(0, 0, 0, 0.2);
-} */
 
 .sec-topic{
   color: darkred;
-  font-size: 3.6rem;
+  font-size: 2.4rem;
   font-family: 'Lalezar', cursive;
   text-decoration-style: solid;
   text-decoration-line: underline;
@@ -275,6 +264,8 @@ main {
 .footer{
   background: var(--green02);
   padding: 1rem 0;
+  display: flex;
+  justify-content: center;
 }
 
 .pt-50vh{
@@ -286,13 +277,7 @@ main {
     background-position: center top;}
   .home-box{
     padding: 0 20%;}
-  .main-r{
-    right: 6vw;}
-  .sec-topic{
-    font-size: 4.5rem;
-    font-family: 'Lalezar', cursive;
-  }
-  
+
 }
 
 @media (min-width: 768px) {
@@ -303,10 +288,12 @@ main {
     column-count: 3;
   }
   .sec-topic{
-    font-size: 5rem;
+    font-size: 3.6rem;
     font-family: 'Lalezar', cursive;
   }
-
+  .footer{
+    padding: 1.5rem 0;
+  }
 }
 
 @media (min-width: 992px) {
@@ -318,19 +305,12 @@ main {
     height: 100vh;
     margin-left: 4%;
   }
-  .main-block-pr{
-    padding-right: 5%;
-  }  
 }
 
 @media (min-width: 1200px) {
   .card-columns {  
     column-count: 4; 
   }
-  /* .portfolio-pr-adj{
-    padding-right: 5%;
-  } */
-
 }
 
 
