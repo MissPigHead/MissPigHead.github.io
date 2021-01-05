@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2021 at 09:36 AM
+-- Generation Time: Jan 05, 2021 at 09:34 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -20,6 +20,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `webpage`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id` int(11) NOT NULL,
+  `tel` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `location` text COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `tel`, `email`, `location`) VALUES
+(1, '0927775101', 'misspighead@gmail.com', 'New Taipei City, Taiwan');
 
 -- --------------------------------------------------------
 
@@ -62,6 +82,13 @@ CREATE TABLE `introduction` (
   `sh` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `introduction`
+--
+
+INSERT INTO `introduction` (`id`, `intro`, `intro_CH`, `edit_date`, `sh`) VALUES
+(1, 'Hi! I\'m Ling, an experienced telecommunication project manager and a growing web designer.', '歷經電視紀錄片執行製作、家電企劃，近年在通訊產業擔任專案經理，假日於庇護工場擔任講師。\r\n2020下半年，在興趣驅使下，展開網頁工程師之路。', '2021-01-05', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -73,13 +100,15 @@ CREATE TABLE `personal` (
   `name` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `name_CH` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `birth` date NOT NULL,
-  `tel` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `intro` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `intro_CH` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `per_img` text COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'img file path',
-  `location` text COLLATE utf8mb4_unicode_ci NOT NULL
+  `per_img` text COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'img file path'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `personal`
+--
+
+INSERT INTO `personal` (`id`, `name`, `name_CH`, `birth`, `per_img`) VALUES
+(1, 'Ling-Ling, Chang', '張綾凌', '1982-11-22', '');
 
 -- --------------------------------------------------------
 
@@ -131,6 +160,12 @@ INSERT INTO `session` (`id`, `sess_name`, `sess_name_CH`) VALUES
 --
 
 --
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `experience`
 --
 ALTER TABLE `experience`
@@ -171,6 +206,12 @@ ALTER TABLE `session`
 --
 
 --
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `experience`
 --
 ALTER TABLE `experience`
@@ -186,13 +227,13 @@ ALTER TABLE `img`
 -- AUTO_INCREMENT for table `introduction`
 --
 ALTER TABLE `introduction`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `personal`
 --
 ALTER TABLE `personal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `portfolio`
