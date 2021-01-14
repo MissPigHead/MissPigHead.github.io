@@ -475,7 +475,25 @@
     });
   });
 
+$(document).scroll(function(){
+  spy()
+})
 
+function spy(){
+  const nowat=$(document).scrollTop();
+  $("section").each(function(){
+    const
+      id=$(this).id(),
+      offset=$(this).scrollTop().top,
+      height=$(this).innerHeight();
+    // console.log(id,offset,height)
+
+    if(offset <= nowat && nowat < offset+height){
+      $("#header a").removeClass("active")
+    }
+  })
+
+}
 </script>
 </body>
 </html>
