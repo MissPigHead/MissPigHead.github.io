@@ -3,7 +3,7 @@ date_default_timezone_set("Asia/Taipei");
 session_start();
 
 class DB{
-  private $dsn="maysql:host=localhost;dbname=webpage;charset=utf8";
+  private $dsn="mysql:host=localhost;dbname=webpage;charset=utf8";
   private $root="root";
   private $pw="";
   private $pdo;

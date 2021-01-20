@@ -20,6 +20,8 @@ font-family: 'Kavoon', cursive; */
   --grey01:#6b717e;
   --green01:#d4dccd;
   --green02:#d8e2dc;
+  --purple01:#3d03a7;
+  --red01:#ff3b6c;
 }
 
 
@@ -302,6 +304,36 @@ main, footer {
 #main{
   height: 80%;
 }
+#backMenu{
+  height: 15%;
+}
+#backContent{
+  height: 80%;
+}
+/* 
+#contact-info{
+  margin: 0.5rem;
+} */
+
+
+#contact-info p{
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: var(--purple01);
+  display:inline-block;
+}
+
+#contact-info i{
+  font-size: 1.2rem;
+  color: var(--pink05);
+  width: 1.5rem;
+  display: inline-block;
+}
+
+#contact-info iframe{
+  padding: 0.5rem;
+  display:block;
+}
 
 #backend .to-home {
   margin-top: 10px;
@@ -342,6 +374,8 @@ main, footer {
 #backend input[type=submit] {
   color: slategray;
 }
+
+
 
 .KaushanScript {
   font-family: 'Kaushan Script', cursive;
