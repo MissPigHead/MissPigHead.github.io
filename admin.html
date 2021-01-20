@@ -23,6 +23,38 @@
     <script src="plugin/js/custom.js"></script>
     <script src="plugin/js/typed.js"></script>
     <script src="plugin/js/jquery.easing.min.js"></script>
+    <script>
+
+
+    function getJSON(url) {
+      return new Promise((resolve, reject) => {
+        fetch(url)
+          .then(res => resolve(res.json()))
+          .catch(err => reject(err))
+      })
+    }
+
+
+      $(document).ready(
+        getJSON('api/per.php')
+        .then((re)=>{
+          re.contact.forEach((e)=> {
+            console.log(e.name,e.value,e.sh);
+            $(`input[name=${e.name}]`).val(e.value)
+          })
+          re.intro.forEach((e)=> {
+            console.log(e.name,e.value,e.sh);
+            $(`textarea[name=${e.name}]`).val(e.value)
+          })
+          console.log(re.per[0])
+          Object.keys(re.per[0]).forEach((e,idx)=>{
+            console.log(e,re.per[0][e])
+            $(`input[name=${e}]`).val(re.per[0][e])
+          })
+        })
+      )
+    
+    </script>
 </head>
 
 <body>

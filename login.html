@@ -38,7 +38,7 @@
               <h5 class="ClickerScript font-weight-bolder">Admin Portal</h5>
             </div>
           </div>
-          <form id="form1" action="?" class="form-box" method="post">
+          <form id="form1" action="" class="form-box" method="post">
             <div class="col-12 text-center Ramabhadra font-weight-bolder h2">
               Log in
             </div>
@@ -83,7 +83,7 @@
         pw = $("input[name=pw]").val();
       $.post("api/login.php", { email, pw }, function(re){
         if (parseInt(re)===1){
-          location.href = "api/per.php";
+          location.href = "admin.html";
         } else {
           alert("please check email and password again");
         }

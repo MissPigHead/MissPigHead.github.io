@@ -43,10 +43,10 @@ INSERT INTO `admin` (`id`, `email`, `pw`) VALUES
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `cont`
+-- 資料表結構 `contact`
 --
 
-CREATE TABLE `cont` (
+CREATE TABLE `contact` (
   `id` int(11) NOT NULL,
   `name` text COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'github,tel,email,etc.',
   `value` text COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'linkpath,id,num..',
@@ -55,10 +55,10 @@ CREATE TABLE `cont` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- 傾印資料表的資料 `cont`
+-- 傾印資料表的資料 `contact`
 --
 
-INSERT INTO `cont` (`id`, `name`, `value`, `type`, `sh`) VALUES
+INSERT INTO `contact` (`id`, `name`, `value`, `type`, `sh`) VALUES
 (1, 'tel', '0927775101', 'tel', 1),
 (3, 'email', 'misspighead@gmail.com', 'email', 1),
 (4, 'codepen', 'https://codepen.io/misspighead', 'link', 1),
@@ -79,6 +79,15 @@ CREATE TABLE `experience` (
   `title` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `sh` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `experience`
+--
+
+INSERT INTO `experience` (`id`, `period`, `company`, `title`, `sh`) VALUES
+(1, '2018', 'Dimension Data', 'Projet Coordinator', 1),
+(2, '2014-2017', 'ACTS Corp.', 'Project Manager', 1),
+(3, '2013', 'QBlinks Inc.', 'Co-founder, Project Manager', 1);
 
 -- --------------------------------------------------------
 
@@ -191,9 +200,9 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- 資料表索引 `cont`
+-- 資料表索引 `contact`
 --
-ALTER TABLE `cont`
+ALTER TABLE `contact`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -243,9 +252,9 @@ ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- 使用資料表自動遞增(AUTO_INCREMENT) `cont`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `contact`
 --
-ALTER TABLE `cont`
+ALTER TABLE `contact`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --

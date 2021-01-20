@@ -25,7 +25,7 @@ class DB{
     if(!empty($arg[1])){
       $sql=$sql.$arg[1];
     }
-    return $this->pdo->query($sql)->fetchAll();
+    return $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
   }
   
   public function count(...$arg){
