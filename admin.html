@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in</title>
+    <title>Admin Portal</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap&family=Staatliches&display=swap&family=Bebas+Neue&display=swap&family=Courgette&display=swap&family=Kavoon&display=swap&family=Seaweed+Script&display=swap&family=Yesteryear&display=swap"
         rel="stylesheet">
@@ -27,35 +27,46 @@
     <section id="backend">
         <div class="container">
             <div class="row bg-box ">
-                <div class="d-none d-sm-block deco-box"></div>
-                <div class="col-12 d-flex justify-content-end" style="height: 2rem;"><a href="index.html">
+                <div class="col-12 d-flex justify-content-end" style="height: 2rem;">
+                    <a href="index.html">
                         <div class="to-home">Home</div>
-                    </a></div>
-                <div class="d-none d-sm-block logo-box">
-                    <div class="d-flex flex-column justify-content-center align-items-center">
-                        <img src="image/00cat-256.png" alt="" class="my-3" style="width: 100px;">
-                        <h3 class="ClickerScript font-weight-bolder">Ling's</h3>
-                        <h5 class="ClickerScript font-weight-bolder">Admin Portal</h5>
-                    </div>
-                </div>
-                <form id="form1" action="?" class="form-box" method="post" onsubmit="return false">
-                    <div class="col-12 text-center Ramabhadra font-weight-bolder h2">Log in</div>
-                    <div class="col-12 my-4">
-                        <div class="my-2 position-relative">
-                            <input class="col-12" type="text" name="id" placeholder="ID">
-                            <i class="fa fa-user-circle-o"></i>
-                        </div>
-                        <div class="my-2 position-relative">
-                            <input class="col-12 my-2" type="password" name="pw" placeholder="Password">
-                            <i class="fa fa-key"></i>
-                        </div>
-                        <input class="col-12 text-center my-2" type="submit" value="Login">
-                        <div id="result"></div>
-                    </div>
-                    <a href="#">
-                        <div class="col-12 text-center small fg-pw">Forget password?</div>
                     </a>
-                </form>
+                </div>
+                <div id="main" class="col-12 row justify-content-center">
+                    <!-- nav -->
+                        <ul class="nav nav-tabs col-12 col-md-10 col-lg-7 d-flex justify-content-between">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                    aria-haspopup="true" aria-expanded="false">Resume</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="login.php?do=per">Personal Information</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="login.php?do=cont">Contact Information</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="login.php?do=edu">Education</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="login.php?do=exp">Experience</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="login.php?do=intro">Introduction</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="login.php?do=obj">Object</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Skill</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="login.php?do=port">Portfolio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="login.php?do=album">Album</a>
+                            </li>
+                        </ul>
+                </div>
+                <!-- content -->
+                <div class="col-md-10 content-box">
+                </div>
             </div>
         </div>
     </section>
@@ -66,7 +77,7 @@
     function LoginUser() {
         $.ajax({
             type: "POST", //方法
-            url: "./api/login.php", //表單接收url
+            url: "./backend/login.php", //表單接收url
             data: $(`#form1`).serialize(),
             // .serialize() 序列化表單元素 (form elements) 內容為 "name1=value1&name2=value3···" 格式的字串 (string)
             // .serializeArray() 序列化表單元素內容為 [{name: name, value: value}] 格式的陣列 (array)。 
