@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2021-01-20 09:03:17
--- 伺服器版本： 10.4.17-MariaDB
--- PHP 版本： 7.4.13
+-- 產生時間： 2021-01-20 19:01:55
+-- 伺服器版本： 10.4.14-MariaDB
+-- PHP 版本： 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -85,9 +85,10 @@ CREATE TABLE `experience` (
 --
 
 INSERT INTO `experience` (`id`, `period`, `company`, `title`, `sh`) VALUES
-(1, '2018', 'Dimension Data', 'Projet Coordinator', 1),
-(2, '2014-2017', 'ACTS Corp.', 'Project Manager', 1),
-(3, '2013', 'QBlinks Inc.', 'Co-founder, Project Manager', 1);
+(2, '2018-2019', 'SIT', 'Project Coordinator', 1),
+(3, '2018', 'Dimension Data', 'Project Coordinator', 1),
+(5, '2014-2017', 'ACTS Corp.', 'Project Manager', 1),
+(6, '2013', 'QBlinks Inc.', 'Co-founder, Project Manager', 1);
 
 -- --------------------------------------------------------
 
@@ -110,9 +111,8 @@ CREATE TABLE `img` (
 
 CREATE TABLE `introduction` (
   `id` int(11) NOT NULL,
-  `intro` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `intro_CH` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `edit_date` date NOT NULL,
+  `name` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `sh` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -120,8 +120,9 @@ CREATE TABLE `introduction` (
 -- 傾印資料表的資料 `introduction`
 --
 
-INSERT INTO `introduction` (`id`, `intro`, `intro_CH`, `edit_date`, `sh`) VALUES
-(1, 'Hi! I\'m Ling, an experienced telecommunication project manager and a growing web designer.', '歷經電視紀錄片執行製作、家電企劃，近年在通訊產業擔任專案經理，假日於庇護工場擔任講師。\r\n2020下半年，在興趣驅使下，展開網頁工程師之路。', '2021-01-05', 0);
+INSERT INTO `introduction` (`id`, `name`, `value`, `sh`) VALUES
+(1, 'intro_CH', '歷經電視紀錄片執行製作、家電企劃，近年在通訊產業擔任專案經理，假日於庇護工場擔任講師。\r\n2020下半年，在興趣驅使下，展開網頁工程師之路。', 0),
+(2, 'intro', 'Hi! I am Ling, an experienced telecommunication project manager, major customers are FET, TWM, Nokia, and Ericsson.\r\nNow I\'m a growing web designer.\r\nWelcome to contact me!', 0);
 
 -- --------------------------------------------------------
 
@@ -261,7 +262,7 @@ ALTER TABLE `contact`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `experience`
 --
 ALTER TABLE `experience`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `img`
@@ -273,7 +274,7 @@ ALTER TABLE `img`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `introduction`
 --
 ALTER TABLE `introduction`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- 使用資料表自動遞增(AUTO_INCREMENT) `personal`
