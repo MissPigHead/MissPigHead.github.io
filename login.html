@@ -83,7 +83,7 @@
         pw = $("input[name=pw]").val();
       $.post("api/login.php", { email, pw }, function(re){
         if (parseInt(re)===1){
-          location.href = "admin.html";
+          location.href = "api/per.php";
         } else {
           alert("please check email and password again");
         }

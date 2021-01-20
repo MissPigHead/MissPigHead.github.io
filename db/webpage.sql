@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 05, 2021 at 09:34 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.10
+-- 主機： 127.0.0.1
+-- 產生時間： 2021-01-20 09:03:17
+-- 伺服器版本： 10.4.17-MariaDB
+-- PHP 版本： 7.4.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,33 +18,58 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `webpage`
+-- 資料庫： `webpage`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `contact`
+-- 資料表結構 `admin`
 --
 
-CREATE TABLE `contact` (
+CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
-  `tel` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `location` text COLLATE utf8mb4_unicode_ci NOT NULL
+  `pw` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `contact`
+-- 傾印資料表的資料 `admin`
 --
 
-INSERT INTO `contact` (`id`, `tel`, `email`, `location`) VALUES
-(1, '0927775101', 'misspighead@gmail.com', 'New Taipei City, Taiwan');
+INSERT INTO `admin` (`id`, `email`, `pw`) VALUES
+(1, 'misspighead@gmail.com', '10902php');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `experience`
+-- 資料表結構 `cont`
+--
+
+CREATE TABLE `cont` (
+  `id` int(11) NOT NULL,
+  `name` text COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'github,tel,email,etc.',
+  `value` text COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'linkpath,id,num..',
+  `type` text COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'social media,common',
+  `sh` tinyint(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- 傾印資料表的資料 `cont`
+--
+
+INSERT INTO `cont` (`id`, `name`, `value`, `type`, `sh`) VALUES
+(1, 'tel', '0927775101', 'tel', 1),
+(3, 'email', 'misspighead@gmail.com', 'email', 1),
+(4, 'codepen', 'https://codepen.io/misspighead', 'link', 1),
+(5, 'linkedin', 'https://www.linkedin.com/in/lmisspighead/', 'link', 1),
+(6, 'github', 'https://github.com/MissPigHead', 'link', 1),
+(7, 'location', 'XinDian, New Taipei City, Taiwan', 'location', 1);
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `experience`
 --
 
 CREATE TABLE `experience` (
@@ -58,7 +83,7 @@ CREATE TABLE `experience` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `img`
+-- 資料表結構 `img`
 --
 
 CREATE TABLE `img` (
@@ -71,7 +96,7 @@ CREATE TABLE `img` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `introduction`
+-- 資料表結構 `introduction`
 --
 
 CREATE TABLE `introduction` (
@@ -83,7 +108,7 @@ CREATE TABLE `introduction` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `introduction`
+-- 傾印資料表的資料 `introduction`
 --
 
 INSERT INTO `introduction` (`id`, `intro`, `intro_CH`, `edit_date`, `sh`) VALUES
@@ -92,7 +117,7 @@ INSERT INTO `introduction` (`id`, `intro`, `intro_CH`, `edit_date`, `sh`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `personal`
+-- 資料表結構 `personal`
 --
 
 CREATE TABLE `personal` (
@@ -104,7 +129,7 @@ CREATE TABLE `personal` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `personal`
+-- 傾印資料表的資料 `personal`
 --
 
 INSERT INTO `personal` (`id`, `name`, `name_CH`, `birth`, `per_img`) VALUES
@@ -113,7 +138,7 @@ INSERT INTO `personal` (`id`, `name`, `name_CH`, `birth`, `per_img`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `portfolio`
+-- 資料表結構 `portfolio`
 --
 
 CREATE TABLE `portfolio` (
@@ -132,7 +157,7 @@ CREATE TABLE `portfolio` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `session`
+-- 資料表結構 `session`
 --
 
 CREATE TABLE `session` (
@@ -142,7 +167,7 @@ CREATE TABLE `session` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `session`
+-- 傾印資料表的資料 `session`
 --
 
 INSERT INTO `session` (`id`, `sess_name`, `sess_name_CH`) VALUES
@@ -156,93 +181,105 @@ INSERT INTO `session` (`id`, `sess_name`, `sess_name_CH`) VALUES
 (8, 'Skills', '技能');
 
 --
--- Indexes for dumped tables
+-- 已傾印資料表的索引
 --
 
 --
--- Indexes for table `contact`
+-- 資料表索引 `admin`
 --
-ALTER TABLE `contact`
+ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `experience`
+-- 資料表索引 `cont`
+--
+ALTER TABLE `cont`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- 資料表索引 `experience`
 --
 ALTER TABLE `experience`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `img`
+-- 資料表索引 `img`
 --
 ALTER TABLE `img`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `introduction`
+-- 資料表索引 `introduction`
 --
 ALTER TABLE `introduction`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `personal`
+-- 資料表索引 `personal`
 --
 ALTER TABLE `personal`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `portfolio`
+-- 資料表索引 `portfolio`
 --
 ALTER TABLE `portfolio`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `session`
+-- 資料表索引 `session`
 --
 ALTER TABLE `session`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
 --
 
 --
--- AUTO_INCREMENT for table `contact`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `admin`
 --
-ALTER TABLE `contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `experience`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `cont`
+--
+ALTER TABLE `cont`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `experience`
 --
 ALTER TABLE `experience`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `img`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `img`
 --
 ALTER TABLE `img`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `introduction`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `introduction`
 --
 ALTER TABLE `introduction`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `personal`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `personal`
 --
 ALTER TABLE `personal`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `portfolio`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `portfolio`
 --
 ALTER TABLE `portfolio`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `session`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `session`
 --
 ALTER TABLE `session`
   MODIFY `id` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
