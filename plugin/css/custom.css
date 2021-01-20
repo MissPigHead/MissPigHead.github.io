@@ -18,6 +18,7 @@ font-family: 'Kavoon', cursive; */
   --pink09:#602437;
   --pink10:#522e38;
   --grey01:#6b717e;
+  --grey02:#fbf9fa;
   --green01:#d4dccd;
   --green02:#d8e2dc;
   --purple01:#3d03a7;
@@ -70,13 +71,21 @@ html,body{
 }
 
 #nav .profile h1 {
-  font-size: 24px;
+  font-size: 1.2rem;
   margin: 0;
   padding: 0;
   font-weight: 600;
   -moz-text-align-last: center;
   text-align-last: center;
   font-family: "Poppins", sans-serif;
+}
+#nav .social i{
+  padding: 0.2rem 0;
+  font-size: 1.5rem;
+  color:var(--pink01);
+}
+#nav .social i:hover{
+  color:var(--pink06);
 }
 
 .nav-menu {
@@ -97,7 +106,7 @@ html,body{
 .nav-menu a {
   display: flex;
   align-items: center;
-  color:#fbf9fa;
+  color:var(--green02);
   padding: 12px 15px;
   margin-bottom: 8px;
   transition: 0.3s;
@@ -108,7 +117,7 @@ html,body{
 .nav-menu a i {
   font-size: 24px;
   padding-right: 8px;
-  color:#fbf9fa;
+  color:var(--green02);
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a, .nav-menu a:hover i, .nav-menu .active > a i, .nav-menu li:hover > a i{
@@ -180,6 +189,7 @@ html,body{
 main, footer {
   margin-left: 300px;
 }
+
 
 @media (max-width: 991px) {
   #nav {
@@ -375,6 +385,14 @@ main, footer {
   color: slategray;
 }
 
+#backContent input[type=submit]{
+  background: var(--pink02);
+  color: var(--pink08);
+}
+
+#backContent input[type=submit]:hover{
+  background: var(--pink04);
+}
 
 
 .KaushanScript {
