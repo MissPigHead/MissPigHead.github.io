@@ -20,19 +20,32 @@
   <script src="plugin/js/typed.js"></script>
   <script src="plugin/js/jquery.easing.min.js"></script>
   <script>
-    $(document).ready(
+  $(document).ready(
       getJSON('api/front.php')
       .then((re) => {
-        console.log(re.contact)
         re.contact.forEach((e) => {
-          console.log(e.name, e.value, e.sh);
-          if (e.name=="github")
-            $("#nav .social a")[0].href=e.value
-          if (e.name=="linkedin")
-            $("#nav .social a")[1].href=e.value
-          if (e.name=="codepen")
-            $("#nav .social a")[2].href=e.value
+          switch(e.name){
+            case "github":
+              $("#nav .social a")[0].href=e.value
+            break;
+            case "linkedin":
+              $("#nav .social a")[1].href=e.value
+            break;
+            case "codepen":
+              $("#nav .social a")[2].href=e.value
+            break;
+            case "tel":
+              $("#contact-info p")[0].innerHTML=e.value
+            break;
+            case "email":
+              $("#contact-info p")[1].innerHTML=e.value
+            break;
+            case "location":
+              $("#contact-info p")[2].innerHTML=e.value
+            break;
+          }
         })
+
         // re.intro.forEach((e)=> {
         //   console.log(e.name,e.value,e.sh);
         //   $(`textarea[name=${e.name}]`).val(e.value)
@@ -47,7 +60,7 @@
   </script>
 </head>
 
-<body>
+<body style="background: #FEFBEB;">
   <!-- ======= Mobile nav toggle button ======= -->
   <button type="button" class="mobile-nav-toggle d-lg-none"><i class="fas fa-bars"></i></button>
 
@@ -55,20 +68,20 @@
   <section id="nav">
     <!-- personal info -->
     <div class="d-flex flex-column justify-content-center align-items-center">
-      <div class="d-none d-md-block profile">
+      <div class="profile">
         <a href="index.html">
           <img src="image/per-2.jpg" class="img-fluid rounded-circle">
           <h1 class="text-light">Ling-Ling Chang</h1>
         </a>
-        <div class="social d-flex px-3 justify-content-between">
-          <a href="login.html"><i class="fab fa-github"></i></a>
-          <a href="login.html"><i class="fab fa-linkedin"></i></a>
-          <a href="login.html"><i class="fab fa-codepen"></i></a>
+        <div class="social d-flex p-2 justify-content-between">
+          <a><i class="fab fa-github"></i></a>
+          <a><i class="fab fa-linkedin"></i></a>
+          <a><i class="fab fa-codepen"></i></a>
           <!-- <i class="fas fa-envelope"></i>
           <i class="fas fa-mobile-alt"></i> -->
           <!-- <i class="fab fa-skype"></i>
           <i class="fab fa-line"></i> -->
-          <a href="login.html"><i class="fas fa-sign-in-alt"></i></a>
+          <a href="api/cklogin.php"><i class="fas fa-sign-in-alt"></i></a>
         </div>
       </div>
       <nav class="nav-menu">
@@ -134,6 +147,12 @@
       </div>
     </section>
 
+    <script>
+      getJSON('api/exp.php')
+      .then((re)=>{
+        console.log(re)
+      })
+    </script>
 
     <!-------------------- experience -------------------->
     <section id="experience" class="bg-light py-2 py-md-3">
@@ -261,10 +280,6 @@
                 <div class="modal-body">
                   <img class="card-img" src="image/po-ai-sticker.jpg">
                 </div>
-                <!-- <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div> -->
               </div>
             </div>
           </div>
@@ -287,10 +302,6 @@
                 <div class="modal-body">
                   <img class="card-img" src="image/po-ps-eDM.jpg">
                 </div>
-                <!-- <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                  </div> -->
               </div>
             </div>
           </div>
@@ -311,10 +322,6 @@
                 <div class="modal-body">
                   <img class="card-img" src="image/po-DG-eAD.gif">
                 </div>
-                <!-- <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                  </div> -->
               </div>
             </div>
           </div>
@@ -338,18 +345,7 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
                 </div>
-                <!-- <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                  </div> -->
               </div>
-            </div>
-          </div>
-          <div class="card text-center">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
           </div>
           <!-- AniElephant -- Button trigger modal -->
@@ -376,46 +372,40 @@
               </div>
             </div>
           </div>
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                content. This card has even longer content than the first to show that equal height action.</p>
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
 
     <!-------------------- contact -------------------->
-    <section id="contact" class="bg-light py-2 py-md-3">
+    <section id="contact" class="py-2 py-md-3">
       <div class="container">
         <div class="sec-topic text-center py-2 py-md-4">CONTACT</div>
         <div class="row justify-content-center">
-          <div id="contact-info" class="col-12 col-sm-8 col-md-6 justify-content-md-center">
-            <i class="fas fa-mobile-alt"></i>
-            <p>09</p><br>
-            <i class="fas fa-envelope"></i>
-            <p>mi</p><br>
-            <i class="fa fa-location-arrow"></i>
-            <p>Xindian, New Taipei City, Taiwan</p>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115720.54514659298!2d121.46416561154703!3d24.991040623735536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468031d2ce8dbad%3A0x244bc40ec407eb7!2zMjMx5paw5YyX5biC5paw5bqX5Y2A6aaZ5Z2h6YeM!5e0!3m2!1szh-TW!2stw!4v1611112603604!5m2!1szh-TW!2stw"
-              width="300" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
-              tabindex="0"></iframe>
-            <!-- <div class="py-3"><i class="fas fa-mobile-alt"></i>09</div>
-          <div class="py-3"><i class="fas fa-envelope"></i>mi</div>
-          <div class="py-3 d-flex flex-column justify-content-center">
-            <div><i class="fa fa-location-arrow"></i>Xindian, New Taipei City, Taiwan</div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115720.54514659298!2d121.46416561154703!3d24.991040623735536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468031d2ce8dbad%3A0x244bc40ec407eb7!2zMjMx5paw5YyX5biC5paw5bqX5Y2A6aaZ5Z2h6YeM!5e0!3m2!1szh-TW!2stw!4v1611112603604!5m2!1szh-TW!2stw" width="300" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-          </div> -->
-
-
-
-            <!-- Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora aliquid, cupiditate quidem provident, minima obcaecati consequuntur architecto labore esse porro alias eos totam quis earum delectus sint excepturi quo repellendus? -->
+          <div id="contact-info" class="col-12 col-lg-5 mt-3 mb-5 my-lg-0 d-flex flex-column flex-sm-row flex-lg-column justify-content-between align-items-center">
+            <div class="col-sm-5 px-0 d-none d-sm-block d-md-none d-lg-block d-xl-none align-self-lg-start">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115720.54514659298!2d121.46416561154703!3d24.991040623735536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468031d2ce8dbad%3A0x244bc40ec407eb7!2zMjMx5paw5YyX5biC5paw5bqX5Y2A6aaZ5Z2h6YeM!5e0!3m2!1szh-TW!2stw!4v1611112603604!5m2!1szh-TW!2stw"
+                width="230" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                tabindex="0">
+              </iframe>
+            </div>
+            <div class="col-12 col-md-6 d-block d-sm-none d-md-block d-lg-none d-xl-block align-self-xl-start">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115720.54514659298!2d121.46416561154703!3d24.991040623735536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468031d2ce8dbad%3A0x244bc40ec407eb7!2zMjMx5paw5YyX5biC5paw5bqX5Y2A6aaZ5Z2h6YeM!5e0!3m2!1szh-TW!2stw!4v1611112603604!5m2!1szh-TW!2stw"
+                width="330" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                tabindex="0">
+              </iframe>
+            </div>
+            <div class="col-12 col-sm-7 col-md-6 col-lg-12">
+              <i class="fas fa-mobile-alt"></i>
+              <p class="my-sm-3"></p><br>
+              <i class="fas fa-envelope"></i>
+              <p class="my-sm-3"></p><br>
+              <i class="fa fa-location-arrow"></i>
+              <p class="my-sm-3"></p><br>
+            </div>
           </div>
-          <form action="" method="" class="col-12 col-sm-8 col-md-6">
+          <form id="sendMsg" action="" method="" class="col-12 col-lg-7">
             <div class="form-group row justify-content-center">
               <label class="col-sm-2 col-form-label">Name</label>
               <div class="col-sm-10">
@@ -447,8 +437,10 @@
                   data-msg="Please write something for us"></textarea>
               </div>
             </div>
-            <div class="form-group row justify-content-center">
-              <button class="col-6 col-sm-4">Send Message</button>
+            <div class="form-group row justify-content-end">
+              <div class="col-sm-10" >
+                <input type="submit" class="col-12" value="Send Message">
+              </div>
             </div>
           </form>
         </div>
@@ -586,7 +578,7 @@
       const nowat = $(document).scrollTop();
       $("section").each(function () {
         const
-          id = $(this).id(),
+          id = $(this).attr('id'),
           offset = $(this).scrollTop().top,
           height = $(this).innerHeight();
         // console.log(id,offset,height)

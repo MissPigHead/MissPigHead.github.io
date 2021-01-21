@@ -31,7 +31,6 @@
           $(`input[name=${e.name}]`).val(e.value)
         })
         re.intro.forEach((e, idx) => {
-          console.log(e.id, e.name, e.value, idx);
           let T = "";
           if (e.name == "intro")
             T = "Introduction_EN";
@@ -54,6 +53,9 @@
     <div class="container">
       <div class="row bg-box ">
         <div class="col-12 d-flex justify-content-end" style="height: 2rem;">
+          <a href="api/logout.php">
+            <div class="to-home mx-3" >Logout</div>
+          </a>
           <a href="index.html">
             <div class="to-home">Home</div>
           </a>

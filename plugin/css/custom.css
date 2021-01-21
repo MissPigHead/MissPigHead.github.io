@@ -10,6 +10,7 @@ font-family: 'Kavoon', cursive; */
 :root {
   --pink01:#fadde1;
   --pink02:#ffc4d6;
+  --pink03::#fd358f;
   --pink04:#ff87ab;
   --pink05:#ff5d8f;
   --pink06:#e05780;
@@ -80,12 +81,18 @@ html,body{
   font-family: "Poppins", sans-serif;
 }
 #nav .social i{
-  padding: 0.2rem 0;
-  font-size: 1.5rem;
-  color:var(--pink01);
+  font-size: 1.4rem;
+  color:var(--pink06);
+  line-height: 2rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  text-align: center;
+  background: var(--grey02);
+  margin: 0.2rem;
 }
 #nav .social i:hover{
-  color:var(--pink06);
+  color:var(--pink04);
 }
 
 .nav-menu {
@@ -106,7 +113,7 @@ html,body{
 .nav-menu a {
   display: flex;
   align-items: center;
-  color:var(--green02);
+  color:var(--grey02);
   padding: 12px 15px;
   margin-bottom: 8px;
   transition: 0.3s;
@@ -117,7 +124,7 @@ html,body{
 .nav-menu a i {
   font-size: 24px;
   padding-right: 8px;
-  color:var(--green02);
+  color:var(--pink01);
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a, .nav-menu a:hover i, .nav-menu .active > a i, .nav-menu li:hover > a i{
@@ -260,7 +267,7 @@ main, footer {
 }
 
 .footer{
-  background: var(--green02);
+  background: #FEFBEB;
   padding: 1rem 0;
   display: flex;
   justify-content: center;
@@ -320,15 +327,18 @@ main, footer {
 #backContent{
   height: 80%;
 }
-/* 
-#contact-info{
-  margin: 0.5rem;
-} */
 
+#contact{
+  background:#fffef9;
+}
+
+#contact .container{
+  margin-bottom: 4rem;
+  background:#fffef9;
+}
 
 #contact-info p{
-  padding: 0.5rem;
-  font-size: 1rem;
+  margin: 0.3rem;
   color: var(--purple01);
   display:inline-block;
 }
@@ -343,6 +353,18 @@ main, footer {
 #contact-info iframe{
   padding: 0.5rem;
   display:block;
+}
+
+#sendMsg input[type=submit]{
+  background: #fceeb1;
+  color: var(--pink08);
+  font-weight: 700;
+  border:1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+
+#sendMsg input[type=submit]:hover{
+  background: #FAE588;
 }
 
 #backend .to-home {
