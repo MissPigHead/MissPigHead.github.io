@@ -20,7 +20,7 @@
   <script src="plugin/js/typed.js"></script>
   <script src="./plugin/aos-master/dist/aos.js"></script>
   <script src="plugin/js/jquery.easing.min.js"></script>
-  <script src="plugin/js/custom.js"></script>
+
 
 </head>
 
@@ -28,6 +28,7 @@
 
   <!-- ======= Mobile nav toggle button ======= -->
   <button type="button" class="mobile-nav-toggle d-inline-block d-lg-none"><i class="fas fa-bars"></i></button>
+  <!-- <button type="button" class="mobile-nav-toggle d-inline-block d-lg-none"><i class="fas fa-arrow-circle-up"></i></button> -->
 
   <!-- ======= Nav ======= -->
   <section id="nav">
@@ -426,153 +427,12 @@
   </main>
 
   <footer class="footer">
+    <div id="scrolltop" class="position-fixed">
+      <a class="d-inline-block" href="index.html"><i class="fas fa-angle-double-up fa-2x"></i></a>
+    </div>
     &copy; 2020 &nbsp;<strong>Lingling Chang</strong>. All rights reserved.
   </footer>
-  <!-------------------- script -------------------->
-
-
-  <script>
-     AOS.init();
-    $(document).ready(
-     
-    )
-
-    // 打字效果 https://github.com/mattboldt/typed.js/ 
-    let typed1_str = $(".typed1").data('typed-items');
-    typed1_str = typed1_str.split(',')
-    new Typed('.typed1', {
-      strings: typed1_str,
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 0,
-      backDelay: 0,
-      showCursor: false,
-      fadeOut: true,
-      fadeOutClass: 'typed-fade-out',
-      fadeOutDelay: 1000,
-    });
-
-
-    let typed2_str = $(".typed2").data('typed-items');
-    typed2_str = typed2_str.split(';')
-    new Typed('.typed2', {
-      strings: typed2_str,
-      // startDelay:3000,
-      loop: true,
-      startDelay: 0,
-      typeSpeed: 10,
-      backSpeed: 0,
-      backDelay: 0,
-      showCursor: false,
-      fadeOut: true,
-      fadeOutClass: 'typed-fade-out',
-      fadeOutDelay: 1000,
-
-    });
-
-
-
-    // Smooth scroll for the navigation menu and links with .scrollto classes
-    $(document).on('click', '.nav-menu a, .scrollto', function (e) {
-      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this
-        .hostname) {
-        e.preventDefault();
-        var target = $(this.hash);
-        if (target.length) {
-
-          var scrollto = target.offset().top;
-
-          $('html, body').animate({
-            scrollTop: scrollto
-          }, 1500, 'easeInOutExpo');
-
-          if ($(this).parents('.nav-menu, .mobile-nav').length) {
-            $('.nav-menu .active, .mobile-nav .active').removeClass('active');
-            $(this).closest('li').addClass('active');
-          }
-
-          if ($('body').hasClass('mobile-nav-active')) {
-            $('body').removeClass('mobile-nav-active');
-            $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu far fa-times-circle');
-          }
-          return false;
-        }
-      }
-    });
-
-
-
-    // Activate smooth scroll on page load with hash links in the url
-    $(document).ready(function () {
-      if (window.location.hash) {
-        var initial_nav = window.location.hash;
-        if ($(initial_nav).length) {
-          var scrollto = $(initial_nav).offset().top;
-          $('html, body').animate({
-            scrollTop: scrollto
-          }, 1500, 'easeInOutExpo');
-        }
-      }
-    });
-
-    $(document).on('click', '.mobile-nav-toggle', function (e) {
-      $('body').toggleClass('mobile-nav-active');
-      $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu far fa-times-circle');
-    });
-
-    $(document).click(function (e) {
-      var container = $(".mobile-nav-toggle");
-      if (!container.is(e.target) && container.has(e.target).length === 0) {
-        if ($('body').hasClass('mobile-nav-active')) {
-          $('body').removeClass('mobile-nav-active');
-          $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu far fa-times-circle');
-        }
-      }
-    });
-
-    // Navigation active state on scroll
-    var nav_sections = $('section');
-    var main_nav = $('.nav-menu, .mobile-nav');
-
-    $(window).on('scroll', function () {
-      var cur_pos = $(this).scrollTop() + 200;
-
-      nav_sections.each(function () {
-        var top = $(this).offset().top,
-          bottom = top + $(this).outerHeight();
-
-        if (cur_pos >= top && cur_pos <= bottom) {
-          if (cur_pos <= bottom) {
-            main_nav.find('li').removeClass('active');
-          }
-          main_nav.find('a[href="#' + $(this).attr('id') + '"]').parent('li').addClass('active');
-        }
-        if (cur_pos < 300) {
-          $(".nav-menu ul:first li:first").addClass('active');
-        }
-      });
-    });
-
-    $(document).scroll(function () {
-      spy()
-    })
-
-    function spy() {
-      const nowat = $(document).scrollTop();
-      $("section").each(function () {
-        const
-          id = $(this).attr('id'),
-          offset = $(this).scrollTop().top,
-          height = $(this).innerHeight();
-        // console.log(id,offset,height)
-
-        if (offset <= nowat && nowat < offset + height) {
-          $("#header a").removeClass("active")
-        }
-      })
-
-    }
-  </script>
+  <script src="plugin/js/custom.js"></script>
 </body>
 
 </html>
