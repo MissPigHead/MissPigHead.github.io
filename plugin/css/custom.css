@@ -271,8 +271,6 @@ footer {
 }
 
 
-
-
 /* banner */
 .banner-image {
   background-image: url('./../../image/banner-1.jpg');
@@ -309,7 +307,7 @@ footer {
 
 .sec-topic {
   color: var(--purple06);
-  margin: 3rem auto;
+  margin: 1rem auto;
   font-size: 2.4rem;
   font-family: 'Lalezar', cursive;
   text-decoration-style: solid;
@@ -322,9 +320,16 @@ footer {
   color: var(--pink07);
   transform: translate(-30%,-40%) rotate(180deg) scale(0.8);
 }
-.portfolio-image {
-  width: 100vw;
-  background-color: #f4e8e8;
+
+.intro-box{
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: var(--grey02);
+  box-shadow: 0 0 10px 0 var(--pink01);
+}
+.intro-box img{
+  object-fit: contain;
 }
 
 /* 自定義card瀑布欄位數 */
@@ -352,19 +357,17 @@ footer {
   padding-top: 50vh;
 }
 
-#contact {
-  background: #fffef9;
+#intro,#portfolio {
+  background: #fffff0;
+}
+#contact,#experience {
+  background: #fff9f6;
 }
 
 #contact .card {
   padding: 1rem 1.5rem;
   background: var(--pink11);
   box-shadow: 0 0 5px 0 var(--pink02);
-}
-
-#contact .container {
-  margin-bottom: 4rem;
-  background: #fffef9;
 }
 
 #contact-info p {
