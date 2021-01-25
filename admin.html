@@ -23,36 +23,13 @@
   <script src="plugin/js/custom.js"></script>
   <script src="plugin/js/typed.js"></script>
   <script src="plugin/js/jquery.easing.min.js"></script>
-  <script>
-    $(document).ready(
-      getJSON('api/back.php')
-      .then((re) => {
-        re.contact.forEach((e) => {
-          $(`input[name=${e.name}]`).val(e.value)
-        })
-        re.intro.forEach((e, idx) => {
-          let T = "";
-          if (e.name == "intro")
-            T = "Introduction_EN";
-          if (e.name == "intro_CH")
-            T = "Introduction_CH";
-          $("#intro .con").append(
-            `<div class="input-group col-12 my-2"><div class='input-group-prepend'><span class='input-group-text'>${T}</span></div><textarea style="height:5rem;" class='form-control' name='${e.name}' placeholder=''>${e.value}</textarea><input type='hidden' name='id' value=${e.id}></div>`
-          )
-        })
-        Object.keys(re.per[0]).forEach((e, idx) => {
-          $(`input[name=${e}]`).val(re.per[0][e])
-        })
-      })
-    )
-  </script>
 </head>
 
 <body>
   <section id="backend">
     <div class="container">
       <div class="row bg-box ">
-        <div class="col-12 d-flex justify-content-end" style="height: 2rem;">
+        <div class="col-12 d-flex justify-content-end" style="height: 5%;">
           <a href="api/logout.php">
             <div class="to-home mx-3" >Logout</div>
           </a>
@@ -60,35 +37,26 @@
             <div class="to-home">Home</div>
           </a>
         </div>
-        <div id="adminMenu" class="col-12 row justify-content-center">
+        <div id="adminMenu" class="col-12 row justify-content-center" style="height: 6%;">
           <!-- nav -->
-          <ul class="nav nav-tabs col-12 col-md-10 col-lg-7 d-flex justify-content-between">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                aria-expanded="false">Resume</a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="login.php?do=per">Personal Information</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="login.php?do=cont">Contact Information</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="login.php?do=edu">Education</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="login.php?do=exp">Experience</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="login.php?do=intro">Introduction</a>
-              </div>
+          <ul class="nav nav-tabs col-11 d-flex justify-content-around">
+            <li class="nav-item">
+              <a class="nav-link" onclick="toShow(1)">Personal Info</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="login.php?do=obj">Object</a>
+              <a class="nav-link" onclick="toShow(2)">Introduction</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Skill</a>
+              <a class="nav-link" onclick="toShow(3)">Experience</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="login.php?do=port">Portfolio</a>
+              <a class="nav-link" >Skill</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="login.php?do=album">Album</a>
+              <a class="nav-link" >Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" >Album</a>
             </li>
           </ul>
         </div>
@@ -96,7 +64,7 @@
         <div id="backContent" class="col-md-12 content-box overflow-auto">
 
 
-
+<!-- Intro -->
           <form id="intro" class="col-12 row my-3 mx-0">
             <div class="con w-100">
             </div>
@@ -105,15 +73,13 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text">Introduction_CH</span>
                 </div>
-                <textarea style="height:5rem;" class="form-control" name="intro_CH"></textarea>
-                <input type="hidden" name="id" value="new">
+                <textarea style="height:5rem;" class="form-control" name="intro_CH" title=""></textarea>
               </div>
               <div class="input-group col-12 my-2">
                 <div class="input-group-prepend">
                   <span class="input-group-text">Introduction_EN</span>
                 </div>
-                <textarea style="height:5rem;" class="form-control" name="intro"></textarea>
-                <input type="hidden" name="id" value="new">
+                <textarea style="height:5rem;" class="form-control" name="intro" title=""></textarea>
               </div>
               <div class="input-group col-12 mt-5">
                 <input type="submit" class="form-control" value="Edit / Add">
@@ -122,7 +88,7 @@
           </form>
 
 
-
+<!-- persoanl info + contact -->
           <form id="per" class="col-12 row my-3 mx-0">
             <div class="input-group col-6 my-2">
               <div class="input-group-prepend">
@@ -191,165 +157,181 @@
             </div>
           </form>
 
-          <script>
-            $("#intro").submit(function(){
-              let table="intro"
-              let a=""
-              $("#intro textarea").each((e,idx)=>{
-                console.log($("#intro textarea")[e].attributes.name.nodeValue) // name
-                console.log($("#intro textarea")[e].innerHTML) // value
-                a[e]={
-                  'name':$("#intro textarea")[e].attributes.name.nodeValue,
-                  'value':$("#intro textarea")[e].innerHTML}
-              })
-              
-              $("#intro input[type=hidden]").each((e,idx)=>{
-                console.log($("#intro input[type=hidden]")[e].attributes.value.nodeValue) // id
-                  // a[e]={'id':$("#intro input")[e].attributes.value.nodeValue}
-                  // a[idx]['id']=$("#intro input")[e].attributes.value.nodeValue
-              })
-              
-              $.post("api/test.php", {a,table},function(re){
-                console.log(re)
-              })
+<!-- persoanl info + contact -->
+          <form id="exp" class="col-12 row my-1 mx-0">
+            <div class="exp-box-1 col-12 row">
+              <h4 class="text-danger col-12 text-center">Company</h4>
+              <div class="input-group col-6 mt-1">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">Company</div>
+                </div>
+                <input type="text" class="form-control" name="company">
+              </div>
+              <div class="input-group col-6 mt-1">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">Company_CH</div>
+                </div>
+                <input type="text" class="form-control" name="company_CH">
+              </div>
+              <div class="input-group col-6 mt-1">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">Title</div>
+                </div>
+                <input type="text" class="form-control" name="title">
+              </div>
+              <div class="input-group col-6 mt-1">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">Title_CH</div>
+                </div>
+                <input type="text" class="form-control" name="title_CH">
+              </div>
+              <div class="input-group col-6 mt-1">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">Period</div>
+                </div>
+                <input type="text" class="form-control" name="period">
+              </div>
+              <div class="input-group col-6 mt-1">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">Show or Hide</div>
+                </div>
+                <select class="custom-select" id="">
+                  <option value="1">Show</option>
+                  <option value="0">Hide</option>
+                </select>
+              </div>
+            </div>
+            <div class="exp-box-2 col-12 mt-3 row">
+              <h4 class="text-danger col-12 text-center">Job Description</h4>
+              <div class="input-group col-12 mt-1">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">Description_EN</div>
+                </div>
+                <input type="text" class="form-control" name="description">
+              </div>
+              <div class="input-group col-12 mt-1">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">Description_CH</div>
+                </div>
+                <input type="text" class="form-control" name="description_CH">
+              </div>
+            </div>
+            <!-- <div class="exp-box-3 col-12 mt-3 row">
+              <h4 class="text-danger col-12 text-center">Project Achieved</h4>
+            </div>
+            <div class="input-group col-12 mt-5"> 
+              <input type="submit" class="form-control" value="Edit">
 
-              location.href = "api/test.php";
-              
-            })
-          </script>
-
+            </div> -->
+          </form>
 
         </div>
       </div>
     </div>
   </section>
+  <script>
+    
+    function initial(){
+      $("#intro").hide();
+      $("#per").hide();
+      $("#exp").hide();
+      
+    }
 
+    initial()
 
-  <!-------------------- experience -------------------->
-  <section id="experience" class="bg-light py-2 py-md-3">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-12 text-center sec-topic py-2 py-md-4">EXPERIENCE</div>
-        <!-- 這層加detail -->
-        <div class="col-12 col-md-9 col-xl-8 row justify-content-center" data-toggle="collapse" href="#exDD">
-          <div class="col-10">
-            <div class="exp-1">2018 Dimension Data</div>
-            <div class="exp-2">Project Coordinator</div>
-            <div class="exp-3"><i class="icon-flag"></i>FET router, switch and related devices for Core transportation,
-              IT, and several BUs; over 300 sites and 5000 devices.</div>
-          </div>
-          <div class="col-1">
-            <img src="image/milestone-c.png" height="150px">
-          </div>
-        </div>
-        <div class="collapse col-12 col-md-9 col-xl-8 pt-2 pb-5" id="exDD">
-          <div class="p-2 card card-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
-            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-          </div>
-        </div>
+    function toShow(tab){
+      initial()
+      switch (tab){
+        case 1:
+          $("#per").show()
+        break;
+        case 2:
+          $("#intro").show()
+        break;
+        case 3:
+          $("#exp").show()
+        break;
+      }
+    }
 
+    getJSON('api/per.php') // load personal info
+    .then((re) => {
+      re.contact.forEach((e) => {  // contact
+        $(`input[name=${e.name}]`).val(e.value)
+      })
+      re.intro.forEach((e, idx) => { // intro
+        let T = "";
+        if (e.name == "intro"){T = "Introduction_EN";}
+        if (e.name == "intro_CH"){T = "Introduction_CH";}
+        $("#intro .con").append(
+          `<div class="input-group col-12 my-2"><div class='input-group-prepend'><span class='input-group-text'>${T}</span></div><textarea style="height:5rem;" class='form-control' name='${e.name}' title='${e.id}'>${e.value}</textarea>`
+        )
+      })
+      Object.keys(re.per[0]).forEach((e, idx) => { // personal info
+        $(`input[name=${e}]`).val(re.per[0][e])
+      })
+    })
 
-        <div class="col-12 col-md-9 col-xl-8 row justify-content-center" data-toggle="collapse" href="#exACTS">
-          <div class="col-10">
-            <div class="exp-1">2014-2017 ACTS Corp.</div>
-            <div class="exp-2">Project Manager</div>
-            <div class="exp-3"><i class="icon-flag"></i>Main customer: FET, TWM, Ericsson, Nokia<br>Ascom Mobile signal
-              test solution implementation, Alcatel-Lucent & Fortinet Core network system integration。</div>
-          </div>
-          <div class="col-1">
-            <img src="image/milestone-c.png" height="150px">
-          </div>
-        </div>
-        <div class="collapse col-10 col-xl-8 py-3" id="exACTS">
-          <div class="p-2 card card-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
-            keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-          </div>
-        </div>
-
-
-        <div class="col-12 col-md-9 col-xl-8 row justify-content-center" data-toggle="collapse" href="#exQblinks">
-          <div class="col-10">
-            <div class="exp-1">2013-2014 Qblinks Inc.</div>
-            <div class="exp-2">Co-founder, Project Manager</div>
-            <div class="exp-3"><i class="icon-flag"></i>Introduce Oracle ERP System<br>Ascom Mobile signal test solution
-              implementation, Alcatel-Lucent & Fortinet Core network system integration。</div>
-          </div>
-          <div class="col-1">
-            <img src="image/milestone-c.png" height="150px">
-          </div>
-        </div>
-        <div class="collapse col-10 col-xl-8 py-3" id="exQblinks">
-          <div class="p-2 card card-body">
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere voluptates, fuga, harum ipsum, non quia
-              impedit maiores accusamus ad quam facilis libero eos! Nisi libero autem in facilis vero itaque.
-            </p>
-            <p>
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
-              keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-            </p>
-          </div>
-        </div>
+    getJSON('api/exp.php') // load experience
+    .then((re)=>{
+      re[0].forEach(e => {
+        $("#experience .ex-row").append(`<div class='comN-${e.id} col-12 col-md-9 col-xl-8 row justify-content-center' data-toggle='collapse' href='#comN-${e.id}'><div class='col-10'><div class='exp-1'><i class='icon-flag'></i> ${e.period} ${e.company} ${e.company_CH}</div><div class='exp-2'>${e.title}</div><div class='exp-3'></div></div><div class='col-1'><img src='image/milestone-c.png' height='180px'></div></div><div class='collapse col-12 col-md-9 col-xl-8 pt-2 pb-5' id='comN-${e.id}'><div class='com-des-${e.id} p-2 card card-body'></div></div>`)
+      });
+      re[1].forEach(e => {
+        $(`.com-des-${e.company}`).append(`<div class='exp-4'>${e.period} ${e.project_name_CH}</div><div class='exp-5'>${e.description_CH}</div>`)
+      })
+      re[2].forEach(e=>{
+        $(`.comN-${e.company} .exp-3`).append(`<div class='p-0'>☆ ${e.description_CH}<div>`)
+      })
+    })
 
 
 
-      </div>
-    </div>
-  </section>
+    $('form#intro').on('submit', function(){
+      console.log(1)
+      let table="intro"
+      let a=[]
+      $("#intro textarea").each((e)=>{
+        a[e]={
+          'name':$("#intro textarea")[e].attributes.name.nodeValue,
+          'value':$("#intro textarea")[e].innerHTML,
+          'id':$("#intro textarea")[e].attributes.title.nodeValue}
+      })
+        console.log(a)
+    $.ajax({
+        url: 'api/test.php',              // 要傳送的頁面
+        method: 'POST',               // 使用 POST 方法傳送請求
+        dataType: 'string',             // 回傳資料會是 json 格式
+        data: a.serialize(),  // 將表單資料用打包起來送出去
+        success: function(res){ // 成功以後會執行這個方法
+          console.log(res)
+        },
+    });
+    return false;  // 阻止瀏覽器跳轉到 send.php，因為已經用 ajax 送出去了
+});
 
+    // $("#intro").submit(function(){
+    //   let table="intro"
+    //   let a=[]
+    //   $("#intro textarea").each((e)=>{
+    //     // console.log($("#intro textarea")[e].attributes.name.nodeValue) // name
+    //     // console.log($("#intro textarea")[e].innerHTML) // value
+    //     a[e]={
+    //       'name':$("#intro textarea")[e].attributes.name.nodeValue,
+    //       'value':$("#intro textarea")[e].innerHTML,
+    //       'id':$("#intro textarea")[e].attributes.title.nodeValue}
+    //   })
+      
+    //   data=a
+    //     console.log(data)
+    //   $.post("api/test.php", {data,table}, function (re) {
+    //     console.log(re)
+    //     })
 
-  <!-------------------- contact -------------------->
-  <section id="contact" class="bg-light py-2 py-md-3">
-    <div class="container">
-      <div class="sec-topic text-center py-2 py-md-4">CONTACT</div>
-      <div class="row">
-        <div class="col-md-5">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora aliquid, cupiditate quidem provident, minima
-          obcaecati consequuntur architecto labore esse porro alias eos totam quis earum delectus sint excepturi quo
-          repellendus?
-        </div>
-        <form action="" method="" class="col-md-7">
-          <div class="form-group row justify-content-center">
-            <label class="col-sm-2 col-form-label">Name</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" placeholder="Let me know who you are">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-10">
-              <input type="email" class="form-control" placeholder="Please leave your email">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Telephone</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control" placeholder="Please leave your phone number">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Subject</label>
-            <div class="col-sm-10">
-              <input type="text" class="form-control">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Message</label>
-            <div class="col-sm-10">
-              <textarea class="form-control" name="message" rows="10" data-rule="required"
-                data-msg="Please write something for us"></textarea>
-            </div>
-          </div>
-          <div class="form-group row justify-content-center">
-            <button class="col-6 col-sm-4">Send Message</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
+      
+    // })
+  </script>
 </body>
 
 </html>
