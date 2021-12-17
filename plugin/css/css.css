@@ -1,11 +1,3 @@
-/* font-family: 'Courgette', cursive;
-font-family: 'Seaweed Script', cursive;
-font-family: 'Yesteryear', cursive;
-
-font-family: 'Bebas Neue', cursive;
-font-family: 'Staatliches', cursive;
-font-family: 'Lalezar', cursive;
-font-family: 'Kavoon', cursive; */
 @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Heebo:wght@700&family=Kaushan+Script&family=Marck+Script&family=Rubik&display=swap');
 
 :root {
@@ -19,89 +11,36 @@ font-family: 'Kavoon', cursive; */
   --pink08: #fd358f;
   --pink09: #f72585;
   --pink10: #8a2846;
-  --pink11: #602437;
   --pink12: #522e38;
   --grey00: #fffefd;
   --grey01: #f9fbfe;
   --grey02: #f0f9fa;
   --grey03: #6b717e;
   --grey04: #454151;
-  --grey05: #343a40;
   --purple01: #d0c2e5;
-  --purple03: #826ba5;
-  --purple06: #5e428a;
+  --purple06: #343366;
   --green01: #f7fff0;
-  --green02: #dff5e7;
-  --green03: #a7e9c1;
-  --cyan01: #eaf6f8;
-  --cyan02: #a8f5ff;
   --blue01: #208cca;
-  --blue02: #413bac;
-  --blue03: #1e1a60;
-  --blue04: #07134b;
+  --blue02: #393581;
+  --blue03: #2f2d57;
   --red01: #ff2c1d;
-  --orange01:#d8572a;
-  --orange02:#9b3e1c;
   --yellow00:#fdfdf5;
   --yellow01:#fefbeb;
   --yellow02:#fdf8e1;
   --yellow03:#fcefb4;
-  --yellow04:#fae588;
-  --yellow05:#f9dc5c;
-  --yellow06:#f0c020;
 
-}
-
-/* background: #fcf8f0; 
- background: #f0fcf8; 
- background: #f0fcef; 
- background: #fadde1; */
-
-/* .font-Hammer {
-  font-family: 'Hammersmith One', sans-serif;
-}
-
-.font-yest {
-  font-family: 'Yesteryear', cursive;
-}
-
-.font-bebas {
-  font-family: 'Bebas Neue', cursive;
-}
-
-.font-kavoon {
-  font-family: 'Kavoon', cursive;
-}
-
-.KaushanScript {
-  font-family: 'Kaushan Script', cursive;
-}
-
-.ClickerScript {
-  font-family: 'Clicker Script', cursive;
-}
-
-.MarckScript {
-  font-family: 'Marck Script', cursive;
-}
-
-.Ramabhadra {
-  font-family: 'Ramabhadra', sans-serif;
-}
- */
-.c-r-1{
-  color: var(--red01);
 }
 
 html,
 body {
+  font-size: 14px;
   width: 100%;
   margin: 0;
   padding: 0;
 }
 body{
   font-family: Helvetica, Arial,"Apple LiGothic Medium","Microsoft JhengHei","Noto Sans TC", sans-serif;
-  color: var(--grey05);
+  color: var(--grey03);
   background: var(--grey00);
   overflow: hidden auto;
 }
@@ -330,7 +269,7 @@ a:hover {
 .cen{
   margin: 0 auto;
 }
-.intro-short-p,.intro-last-p{
+.intro-short-p{
   font-size: 1.6rem;
   font-weight: bolder;
   text-decoration-style: solid;
@@ -355,9 +294,13 @@ a:hover {
   line-height: 1.8rem;
 }
 .intro-last-p{
-  font-size: 1.2rem;
-  text-decoration: none;
+  font-weight: bolder;
+  text-decoration-color: var(--pink03);
 }
+.c-r-1{
+  color: var(--red01);
+}
+
 /****************************** experience ********************************/
 #experience>.container{
   background: var(--grey01);
@@ -507,7 +450,7 @@ a:hover {
   transform: scale(0.7) translate(-20%, -70%);
 }
 
-#sendMsg input[type=submit] {
+#sendMsg div.btn {
   background: var(--yellow01);
   color: var(--pink08);
   font-weight: 700;
@@ -515,13 +458,18 @@ a:hover {
   border-radius: 0.25rem;
 }
 
-#sendMsg input[type=submit]:hover {
+#sendMsg div.btn:hover {
   background: var(--yellow02);
   transform: translate(0.1rem,0.1rem);
-  box-shadow: -0.1rem -0.1rem 0.1rem #555555aa,-0.1rem -0.1rem 0.1rem #ffffffdd inset;
+  box-shadow: -0.1rem -0.1rem 0.1rem #b6b6b6aa,-0.1rem -0.1rem 0.1rem #ffffffdd inset;
 }
 
 /*************************** footer **********************/
+footer{
+  width: 100%;
+  background: var(--yellow03);
+  margin-top: 80px;
+}
 #scrolltop {
   color: var(--pink08);
   opacity: 0;
@@ -542,14 +490,6 @@ footer > .position-fixed {
 }
 footer > .position-fixed > a {
   animation: bounce 2s ease infinite;
-}
-
-.footer {
-  color: var(--purple03);
-  background:var(--yellow03);
-  padding: 1rem 0;
-  display: flex;
-  justify-content: center;
 }
 
 .pt-50vh {
@@ -722,5 +662,9 @@ footer > .position-fixed > a {
   }
   .card-text{
     font-size: 1.2rem;
+  }
+  footer{
+    font-size: 12px;
+    margin-top: 40px;
   }
 }
