@@ -390,6 +390,14 @@ a:hover {
   bottom: -2.5rem;
 }
 
+/******************************** skills ***********************************/
+#skill p{
+  font-family: 'Heebo', sans-serif;
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 1.6rem;
+  margin-bottom: 0.8rem;
+}
 /******************************** portfolio ***********************************/
 #portfolio .card {
   background: #fff;
