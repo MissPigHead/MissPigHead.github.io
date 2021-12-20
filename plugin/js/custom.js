@@ -1,4 +1,4 @@
-/*----- js套件 AOS -----*/ 
+/*----- js套件 AOS -----*/
 // AOS.init();
 $(function () {
   AOS.init({
@@ -6,7 +6,7 @@ $(function () {
   }); // forbidden AOS in mobile senario
 })
 
-/*----- 打字效果 https://github.com/mattboldt/typed.js/ -----*/ 
+/*----- 打字效果 https://github.com/mattboldt/typed.js/ -----*/
 let typed1_str = $(".typed1").data('typed-items');
 typed1_str = typed1_str.split(',')
 new Typed('.typed1', {
@@ -272,3 +272,12 @@ $("#sendMsg div.btn").click(() => {
   checkFormData();
 })
 
+// owl carousel for portfolio
+$('#portfolio .owl-carousel').owlCarousel({
+  loop: true,
+  dots: false,
+  autoplay: true,
+  center: true,
+  items: 1,
+  animateOut: 'fadeOut',
+});

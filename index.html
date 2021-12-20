@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-TW">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,18 +10,16 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap&family=Staatliches&display=swap&family=Bebas+Neue&display=swap&family=Courgette&display=swap&family=Kavoon&display=swap&family=Seaweed+Script&display=swap&family=Yesteryear&display=swap"
       rel="stylesheet">
-    <link href="./plugin/aos-master/dist/aos.css" rel="stylesheet">
+    <link href="plugin/aos-master/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="plugin/lightbox2-2.11.3/css/lightbox.css">
     <link rel="stylesheet" href="plugin/css/bootstrap.min.css">
     <link rel="stylesheet" href="plugin/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
     <link rel="stylesheet" href="plugin/css/css.css">
+    
     <script src="plugin/js/jquery-3.5.1.min.js"></script>
-    <script src="plugin/js/bootstrap.bundle.min.js"></script>
-    <script src="plugin/lightbox2-2.11.3/js/lightbox.js"></script>
-    <script src="plugin/js/typed.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="./plugin/aos-master/dist/aos.js"></script>
-    <script src="plugin/js/jquery.easing.min.js"></script>
   </head>
   <body>
     <!---------------------- Nav toggle ------------------->
@@ -317,7 +314,10 @@
             <div class="col-12 col-sm-6 col-lg-4 col-xl-3 my-1 my-sm-2">
               <a href="https://shop.misspighead.xyz/" target="_blank">
                 <div class="card">
-                  <img src="image/web/Shop1.PNG" class="card-img-top">
+                  <div class="owl-carousel owl-theme bg-dark card-img-top">
+                    <div class="item"><img src="image/web/Shop1.PNG"></div>
+                    <div class="item"><img src="image/web/Shop2.PNG"></div>
+                ` </div>
                   <div class="card-body">
                     <h5 class="card-title exp-2">Ling's Shop</h5>
                     <p class="card-text exp-5">Laravel 6<br>SA / SD<br>RESTful API<br>ECPay API</p>
@@ -328,7 +328,10 @@
             <div class="col-12 col-sm-6 col-lg-4 col-xl-3 my-1 my-sm-2">
               <a href="https:https://adopt.misspighead.xyz/" target="_blank">
                 <div class="card">
-                  <img src="image/web/TakeMeHome.PNG" class="card-img-top">
+                  <div class="owl-carousel owl-theme bg-dark card-img-top">
+                    <div class="item"><img src="image/web/TakeMeHome.PNG"></div>
+                    <div class="item"><img src="image/web/TakeMeHome2.PNG"></div>
+                ` </div>
                   <div class="card-body">
                     <h5 class="card-title exp-2">Take Me Home</h5>
                     <p class="card-text exp-5">流浪貓 - 資料來自農委會<br>Ajax / CORS / Opendata API <br>RWD頁面<br>AWS EC2 架站</p>
@@ -597,6 +600,13 @@
         <a class="d-inline-block" href="#"><i class="fas fa-angle-double-up fa-2x"></i></a>
       </div>
     </footer>
+    <script src="plugin/js/bootstrap.bundle.min.js"></script>
+    <script src="plugin/lightbox2-2.11.3/js/lightbox.js"></script>
+    <script src="plugin/js/typed.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="./plugin/aos-master/dist/aos.js"></script>
+    <script src="plugin/js/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="plugin/js/custom.js"></script>
   </body>
 </html>
